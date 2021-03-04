@@ -10,11 +10,14 @@ options(tibble.width = Inf)
 # Read SR SSURGO
 ## CHECK PATH
 D2 <- read.csv("data_shared\\Hanusia_files_for_soil_class_analysis-20210303\\soilmu_a_Merge_26Feb2021.csv",header=T)
-## Problem with mean elevation. Steps: Open shape file and DEM in Arcmap. Go to catalog, spatial analyst, zonal stats by table.
-## Specify shapefile for first entry, use FID as the field to summarize zonal stats. Specify DEM as the raster to summarize.
-## Compute just the MEAN and tell it to ignore null values. Some of teh soil polygons in southern unit are not getting summarized.
+## Problem with mean elevation. Steps: (1) Open shape file and DEM in Arcmap. (2) Go to catalog, spatial analyst, zonal stats by table.
+## (3) Specify shapefile for first entry, use FID as the field to summarize zonal stats. Specify DEM as the raster to summarize.
+## Compute just the MEAN and tell it to ignore null or nodata values. It will probably default to writing the output to 
+## a table in your default geodatabase.(4) To view the output, you can use a "join" with the shapefile. You will join with FID
+## as the join field. When you open the joined attribute table, the last column will be the mean elevation. Try vizualizing this
+## field. If you notice that Some of the soil polygons in southern unit are not getting summarized (mean = NULL), that is the problem I encountered.
 ## I don't know why, could be a problem with Shapefile? Maybe try this and see if you can figure it out. I put the topographic
-## indices raster stack in the share drive data for Hanusia. Elevation is the first band of that raster stack.
+## indices raster stack in the share drive data_Hanusia. Elevation is the first band of that raster stack.
 #elev <- read.csv("data_shared\\Hanusia_files_for_soil_class_analysis-20210303\\Benn-Berk_soilmu_a_Merge_mean_elev_by_FID_zonal_stats.csv",header=T)
 
 # Edit some field names and formats - specific to Hanusia's table

@@ -1,4 +1,4 @@
-LandisData	Dynamic Input Data				
+LandisData	"Dynamic Input Data"			
 					
 >>Year	Ecoregion	Species	ProbEst	MaxANPP	MaxB
 >>____	_________	_______	_______	_______	____

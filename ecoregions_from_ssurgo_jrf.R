@@ -14,7 +14,8 @@ options(dplyr.width = Inf,scipen=999, stringsAsFactors = F) # scipen=0 to turn s
 #D2 <- read.csv("data\\soilmu_a_Merge_26Feb2021.csv",header=T)
 D2h <- read.csv("data\\mu_summary_wilt_hanusia_2021-03-10.csv", header=T)
 D2 <- read.csv("data\\mu_summary_VT-MA.csv", header=T)
-## Problem with mean elevation. Steps: (1) Open shape file and DEM in Arcmap. (2) Go to catalog, spatial analyst, zonal stats by table.
+## Need mean elevation for each row in merged shapefile for this code. 
+## Steps: (1) Open shape file and DEM in Arcmap. (2) Go to catalog, spatial analyst, zonal stats by table.
 ## (3) Specify shapefile for first entry, use FID as the field to summarize zonal stats. Specify DEM as the raster to summarize.
 ## Compute just the MEAN and tell it to ignore null or nodata values. It will probably default to writing the output to 
 ## a table in your default geodatabase.(4) To view the output, you can use a "join" with the shapefile. You will join with FID
@@ -30,7 +31,6 @@ names(D2)
 #[1] "mukey"                 "FirstOfslopegradwta"   "FirstOfbrockdepmin"    "SumOfksat_weight1"     "SumOfsand_weight1"    
 #[6] "SumOfsilt_weight1"     "SumOfclay_weight1"     "SumOffieldcap_weight1" "SumOfwiltpt_weight1"   "SumOfmaxdepth_weight" 
 
-# Hanusia - To DO: Rename or reformat columns to the names specified in the next lines. Your starting column names are not the same,
 # You need your column names to agree with names above. They may get truncated if you first join and resave in Arcmap.
 # Try to import the .csv table you export from Access directly here, before any joins to the merged shapefile.
 ## Simplify some variable names and make sure they are classified as.numeric

@@ -27,14 +27,12 @@ elev <- read.csv("data\\soil_mu_a_vtma_mu_summary_elev_by_oid.txt", header=T) # 
 
 # Edit some field names and formats - specific to Hanusia's table
 names(D2)
-#[1] "ï..OID"     "AREASYMBOL" "SPATIALVER" "MUSYM"      "MUKEY"      "Shape_Leng" "Shape_Area" "MUKEY2"     "mukey_1"    "FirstOfslo"
-#[11] "FirstOfbro" "SumOfksat_" "SumOfsand_" "SumOfsilt_" "SumOfclay_" "SumOffield" "SumOfmaxde" "FirstOftex" "FirstOft_1" "FirstOft_2"
-#[21] "AvgOfwfift" "AvgOfwfi_1" "AvgOfwfi_2"
-#names(D2)[1] <- "OID"
+#[1] "mukey"                 "FirstOfslopegradwta"   "FirstOfbrockdepmin"    "SumOfksat_weight1"     "SumOfsand_weight1"    
+#[6] "SumOfsilt_weight1"     "SumOfclay_weight1"     "SumOffieldcap_weight1" "SumOfwiltpt_weight1"   "SumOfmaxdepth_weight" 
 
 # Hanusia - To DO: Rename or reformat columns to the names specified in the next lines. Your starting column names are not the same,
-# So you'll have to read through and update to agree with your column names. I'm not sure why yours got truncated, problem in Arcmap?
-# You may not have to cast them to character or numeric if they already have that format, but the desired format is as.numeric, when specified.
+# You need your column names to agree with names above. They may get truncated if you first join and resave in Arcmap.
+# Try to import the .csv table you export from Access directly here, before any joins to the merged shapefile.
 ## Simplify some variable names and make sure they are classified as.numeric
 D2$slopegradw <- D2$FirstOfslo
 D2$slopegradw <- D2$FirstOfslopegradwta # as.numeric()
@@ -74,17 +72,18 @@ D2$TextClass[((clay >=40)&(sand<=45)&(silt<40))] <- "Clay"
 ## Quick vizualize barplot of TextClass in your data
 barplot(table(D2$TextClass))
 
-
 ## Link elevation data from shapefile back to mu_summary table by mukey
+## This code assumes you have calculated mean elevation for each polygon in your merged shapefile.
+## Ask Jane if you need help with how to do that.
 elev$elev <- elev$MEAN
-## Join you merged shapefile attribute table (imported as "elev" here) with table D2, excluding any overlapping variables
+## Join your merged shapefile attribute table (imported as "elev" here) with table D2, excluding any overlapping variables
 elev2 <- elev %>% dplyr::select(!(which(names(elev) %in% names(D2)))) %>% inner_join(D2, by = c("MUKEY" = "mukey"))
 
 # Figure out cut points to subdivide soil texture classes based on slope, depth or with elevation, if you calculated zonal means by oid
 slopecuts <- quantile(elev2$slopegradw,probs=seq(0,1,1/3),na.rm=T)[3]
 depthcuts <- quantile(elev2$maxdepth,probs=seq(0,1,0.2),na.rm=T)[2:3]
 #depthcuts <- c(30)
-# Vizualize zoil depth
+# Visualize soil depth
 with(elev2, hist(maxdepth, nclass=40)) # If most soils are deeper than 40cm, where most root action is, maybe not worth using as divider
 elevcuts <- quantile(elev2$elev,probs=seq(0,1,0.1), na.rm=T)[c(6,10)]
 ## For New England, when dividing elevation into thirds, consider using 650 as upper cut, as it approximates mean for ecotone
@@ -114,101 +113,87 @@ Dcomb$WHC <- Dcomb$fieldcap - Dcomb$wiltpoint
 
 # Compute weighted mean of soil variables (weighted by polygon area)
 Dout2 <- Dcomb %>% group_by(soilindex) %>% summarize_at(vars(fieldcap,wiltpoint,WHC,slopegradw,brockdepmi,ksat,sand,silt,clay,maxdepth,elev),list(~ weighted.mean(., Shape_Area,na.rm=T)))
-Dout3 <- Dout %>% inner_join(Dout2) %>% dplyr::select(soilindex,TextClass,elevbin,elev,freq,fieldcap:maxdepth)
-Dcombout <- Dcomb %>% dplyr::select(OBJECTID,elev,elevbin,soilindex) %>%
-            arrange(OBJECTID)
-soilindex2remap <- Dcombout$soilindex2
-soilindex2remap[which(soilindex2remap == 4)] <- 5
-soilindex2remap[which(soilindex2remap == 11)] <- 10
-soilindex2remap[which(soilindex2remap == 14)] <- 13
-soilindex2remap[which(soilindex2remap == 17)] <- 16
-soilindex2remap[which(soilindex2remap == 24)] <- 23
-soilindex2remap[which(soilindex2remap == 31)] <- 32
-soilindex2remap[which(soilindex2remap == 34)] <- 33
-soilindex2remap[which(soilindex2remap == 38)] <- 39
-soilindex2remap[which(soilindex2remap == 41)] <- 40
-soilindex2remap[which(soilindex2remap == 42)] <- 43
+Dout3 <- Dout %>% inner_join(Dout2)
 
-Dcombout$soilindex2remap <- soilindex2remap
-Dout4 <- Dout3 %>% filter(soilindex2 %in% unique(soilindex2remap))
-freq4 <- data.frame(table(soilindex2remap))
-Dout4 <- Dout4 %>% inner_join(freq4,by=c("soilindex2" = "soilindex2remap"))
-## CHECK PATH
-#outfile <- "C:/BRM/LANDIS_II/Projects/SavageRiver/savageriver_eco_index_031717.csv"
+## Inspect Dout tables with soil variable means. Then combine similar, weird or otherwise unmodelable classes
+# Remap class values to 0, not modeled, masked or lump with another similar class
+soilindex <- soilindexRemap <- Dout3$soilindex
+# index 9 and 10 have no TextClass and don't summarize WHC, other vars, mask out to 0
+soilindexRemap[which(soilindex == 9)] <- 0
+soilindexRemap[which(soilindex == 10)] <- 0
+# When lumping rare classes that don't have Elev, use minimum distance based on fieldcap:elev
+# dist(Dout3[,6:16], method = "euclidean", diag = FALSE, upper = FALSE, p = 2)
+soilindexRemap[which(soilindex == 4)] <- 23
+soilindexRemap[which(soilindex == 8)] <- 11
+soilindexRemap[which(soilindex == 14)] <- 12
+soilindexRemap[which(soilindex == 20)] <- 17
+soilindexRemap[which(soilindex == 24)] <- 23
+
+soilsRemapDf <- data.frame(soilindex = soilindex, soilindex2 = soilindexRemap)
+## Add updated, remapped classes to table Dcomb and recalculate class means
+Dcomb <- Dcomb %>% inner_join(soilsRemapDf, by=c("soilindex"="soilindex"))
+Dout4 <- Dcomb %>% group_by(soilindex2) %>% summarize_at(vars(fieldcap,wiltpoint,WHC,slopegradw,brockdepmi,ksat,sand,silt,clay,maxdepth,elev),list(~ weighted.mean(., Shape_Area,na.rm=T))) %>%
+                    arrange(soilindex2)
+updateFreq <- Dout3 %>% inner_join(soilsRemapDf) %>% group_by(soilindex2) %>% summarize_at(vars(freq), list(~ sum(.,na.rm=T)))
+
+
+Dout4 <- Dout3 %>% inner_join(soilsRemapDf) %>% dplyr::filter(!(is.na(elevbin) | TextClass == "None")) %>% 
+                      dplyr::select(TextClass, elevbin,soilindex2) %>% right_join(Dout4, by= c("soilindex2" = "soilindex2"))
+Dout4 %>% inner_join(updateFreq)
+Dcombout <- Dcomb %>% dplyr::select(MUKEY,OBJECTID,Shape_Area,elev,elevbin,soilindex) %>% inner_join(soilsRemapDf, by=c("soilindex"="soilindex")) %>%
+  arrange(OBJECTID)
+
+## Write some output if you want --> You will want to join Dcombout to your merged soil shapefile, linking Object ID's
+## Individual polygons (rows in your shapefile) can have the same MUKEY, but different soilindex2 based on mean Elevation by ObjectID.
 #write.csv(Dcomb, file=outfile,row.names=FALSE)
-#write.csv(Dcombout,"C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\adk_soilindex2.csv",row.names=F)
-#write.csv(Dout3,"C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\adk_soilindex2_means.csv",row.names=F)
-#write.csv(Dout4,"C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\adk_soilindex2remap_means.csv",row.names=F)
+#write.csv(Dcombout,"data\\VT-MA_soilindex2.csv",row.names=F)
+#write.csv(Dout3,"data\\VT-MA_soilindex_means.csv",row.names=F)
+#write.csv(Dout4,"data\\VT-MA_soilindex2remap_means.csv",row.names=F)
 
-aggregate(x=Dcomb,by=list(Dcomb$depthbin),FUN="mean")
+#Scale mean soil vars to mean=1 sd=0 to plot class comparisons
+Dout4norm <- Dout4 %>% mutate(across(fieldcap:elev, ~scale(.x)))
 
-# Need to add new Wilting Point values from w15bar SSURGO variable
+# Vizualize class soil variable means
+plot(c(1,11), c(-4,4), xlab = "soil var", ylab = "Scaled mean", type = "n")
+abline(h=0,lty=2)
+for (i in 1:nrow(Dout4norm)) {
+  lines(1:11, Dout4norm[i,4:ncol(Dout4norm)], type = "l", col = i)
+  points(1:11, Dout4norm[i,4:ncol(Dout4norm)], pch = 21, bg = i, cex=1.5)  
+}
+
+text(1:11,rep(-3.5, 10), labels = names(Dout4norm)[4:ncol(Dout4norm)], srt = 90)
+
+## Stopped here, need to continue with the rest...
+
+
+# If you Need to add new Wilting Point values from w15bar SSURGO variable - may need to redo steps above
 library(sp)
 library(rgdal)
+library(sf)
 
-# Function to cast variables stored as a factor to numeric in the correct way
-as.numeric.factor <- function(x) {as.numeric(levels(x))[x]}
-as.char.factor <- function(x) {as.character(levels(x))[x]}
+
+# Try visualizing soils classes you just created by plotting in sf format
+# Read in shapefile of merged county data - use sf
+shape <- st_read("data//soil_mu_a_vtma_mu_summary_elev_by_oid.shp")
+
+shape <- shape %>% inner_join(Dcombout, by = c("OBJECTID" = "OBJECTID", "mukey_num" = "MUKEY"))
+
+# Create a dataframe with the soilindex2 number and categorical colors generated by sf.colors
+soilindex2 <- sort(unique(Dout4$soilindex2))
+soilCols <- sf.colors(n = length(soilindex2), categorical = T)
+soilCols <- data.frame(soilindex2,soilCols)
+
+shape <- shape %>% inner_join(soilCols)
+
+# plot polygon of soilindex 2 class, no outlines
+plot(shape["soilindex2"],pch=20,cex=2,key.pos=1,col=shape$soilCols, lty=0)
+
 
 # Read in shapefile of merged county data 
-w15bar <-readOGR(dsn="C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\ssurgo_from_Emma-20180731",layer="ny6_merge_wc15bar")
+#soilPoly <-readOGR(dsn="data",layer="soil_mu_a_vtma_mu_summary_elev_by_oid")
 # Read previously calculated means (with issues) for mean lat and long
-latlong0 <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\ADK_soils2_means_long_lat_wcs15bar.csv",header=T)
-
-
-w15bardf <- w15bar@data
-w15bardf <- w15bardf %>% select(-OBJECTID,-MUKEY)
-
-# Loopt through and Convert Factors to character for both tables
-for (i in 1:dim(w15bardf)[2]) {
-  if (is.factor(w15bardf[,i])) {
-    w15bardf[,i] <- as.char.factor(w15bardf[,i])
-  }
-}
-str(w15bardf)
-w15bardf$SPATIALVER <- as.numeric(w15bardf$SPATIALVER)
-
-for (i in 1:dim(Dcomb)[2]) {
-  if (is.factor(Dcomb[,i])) {
-    Dcomb[,i] <- as.char.factor(Dcomb[,i])
-  }
-}
-
-# Create a new MUKEY field to collate all the MUKEYS from previously joined tables
-Dcomb$MUKEY_3 <- NA
-mukey_cols <- c(grep("mukey",names(Dcomb),grep("MUKEY",names(Dcomb))))
-nmukeys <- c()
-mukeys <- list()
-
-for (i in 1:dim(Dcomb)[1]) {
-  mukey_vals <- unique(as.character(Dcomb[i,mukey_cols]))
-  nchar_vals <- nchar(mukey_vals)
-  mukey_vali <- mukey_vals[which(nchar_vals > 2)][1]
-  Dcomb$MUKEY_3[i] <- mukey_vali
-  nmukeys <- c(nmukeys,length(which(nchar_vals > 2)))
-  mukeys <- c(mukeys,mukey_vals[which(nchar_vals > 2)])
-}
-table(nmukeys)
-
-w15bardf2 <- w15bardf %>% select(MUKEY_1,WC15Bar) %>% filter(MUKEY_1 %in% sort(unique(Dcomb$MUKEY_3)))
-
-# Join tables to get Wilting point summarized
-Dcomb2 <- Dcomb %>% select(-OBJECTID) %>% left_join(w15bardf2,by=c("MUKEY_3"="MUKEY_1")) %>% distinct(.)
-Dcomb3 <- Dcomb2 %>% filter(nchar(MUKEY_3) > 2)
-dim(Dcomb3)
-
-#Dcomb3 <- Dcomb3 %>% filter(!(ksat==0 & sand==0 & clay==0 & fieldcap==0 & maxdepth==0))
-# Two classes (1,2) are affected by lack of attributes associated with unfinished MUKEYS in Franklin County
-# Replace soil means for those classes with means calculated here 
-w15barout2 <- Dcomb3 %>% group_by(soilindex2) %>% summarize_at(vars(elev,fieldcap,slopegradw,brockdepmi,ksat,sand,silt,clay,maxdepth,WC15Bar,freq.y),funs(weighted.mean(., Shape_Area,na.rm=T))) %>%
-              arrange(as.numeric(soilindex2)) %>% filter(soilindex2 %in% Dout4$soilindex2)
-w15out <- w15barout2 %>% select(soilindex2,WC15Bar)
-new12means <- w15barout2 %>% filter(soilindex2 %in% c("1","2")) %>% select(elev,freq.y,fieldcap,slopegradw,brockdepmi,ksat,sand,silt,clay,maxdepth)
-Dout5 <- Dout4 %>% inner_join(w15out)
-Dout5[1:2,min(which(names(Dout5) %in% names(new12means))):max(which(names(Dout5) %in% names(new12means)))] <- new12means
 
 # Now add mean Lat and Long calculated previously
-latlong <- latlong0 %>% select(soilindex2=soil,lat=lat,long=long) %>% mutate(soilindex2 = as.character(soilindex2))
-Dout5 <- Dout5 %>% inner_join(latlong)
-#write.csv(Dout5,"C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\adk_soilindex2remap_means_w_wiltingpoint.csv",row.names=F)
+#latlong <- latlong0 %>% select(soilindex2=soil,lat=lat,long=long) %>% mutate(soilindex2 = as.character(soilindex2))
+#Dout5 <- Dout5 %>% inner_join(latlong)
 

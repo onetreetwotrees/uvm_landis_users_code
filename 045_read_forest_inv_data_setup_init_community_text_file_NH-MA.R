@@ -25,7 +25,8 @@ plotShape <- readOGR(dsn = "C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\gi
 
 # Create a table for "youngcl" to populated recently disturbed areas. Create from classes in gmmout.
 classes <- sort(unique(lstoposub$class))
-youngAges <- 0:29 # Potential forest ages that can be derived from the Landsat disturbance record (Hansen or NAFD)
+# youngAges is based on the Landsat disturbance data set used. Olivia's data goes up to 14 years prior.
+youngAges <- 0:14 # Potential forest ages that can be derived from the Landsat disturbance record (Hansen or NAFD)
 # Create a vector for Olivia's species codes
 spp <- spplist$V12
 
@@ -328,3 +329,4 @@ mapcodes0 <- cbind(mapcodes0,ages)
 write.csv(incomm,"data\\landis_initial_comm_data_NH-MA_v0.csv",row.names=F)
 write.csv(newplotclass,"data\\landis_age_class_plot_young_stands_NH-MA_v0.csv")
 write.csv(mapcodes0, "data\\landis_mapcodes_NH-MA_v0.csv")
+write.csv(spcodes, "data\\landis_spcodes_NH-MA_v0.csv", row.names=F)

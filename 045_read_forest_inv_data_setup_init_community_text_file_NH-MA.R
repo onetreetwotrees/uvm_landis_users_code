@@ -73,14 +73,14 @@ newx <- data.frame(bam2ha=seq(from=0.5,to=60,by=0.5))
 with(agecl_fia,plot(bam2ha,std_age))
 lines(newx$bam2ha,predict(llplotage.lm,newdata=newx))
 
-# Repeat with simple Bayesian model
-library(brms)
-llplotage.brm <- brm(std_age ~ 0 + log(bam2ha),data=agecl_fia)
-p.brm <- data.frame(predict(llplotage.brm,newdata=newx))
-with(agecl_fia,plot(bam2ha,std_age,pch=21,bg="grey"))
-lines(newx$bam2ha,p.brm$Estimate,lwd=2)
-lines(newx$bam2ha,p.brm$Q2.5)
-lines(newx$bam2ha,p.brm$Q97.5)
+# Optional: Repeat with simple Bayesian model
+#library(brms)
+#llplotage.brm <- brm(std_age ~ 0 + log(bam2ha),data=agecl_fia)
+#p.brm <- data.frame(predict(llplotage.brm,newdata=newx))
+#with(agecl_fia,plot(bam2ha,std_age,pch=21,bg="grey"))
+#lines(newx$bam2ha,p.brm$Estimate,lwd=2)
+#lines(newx$bam2ha,p.brm$Q2.5)
+#lines(newx$bam2ha,p.brm$Q97.5)
 
 ## Define new function to round ages off to nearest 5 or 10 year interval
 mround <- function(x,base){
@@ -275,12 +275,11 @@ for (i in 1:nrow(clmeanrba)) {
   
   for (j in 1:length(youngAges)) {
     yearj <- youngAges[j]
-    if (clmeanrba[i,1] < 14) {
-      plotclassj <- paste(maxplotnum0 + clmeanrba[i,1]*100 + yearj) ## Needs to match mapped community assignment code.
+    if (clmeanrba[i,1] >0) {
+      ## Needs to match mapped community assignment code. Should probably pull out to function.
+      plotclassj <- paste(1000 + clmeanrba[i,1]*100 + yearj) ## Needs to match mapped community assignment code.
     }
-    if (clmeanrba[i,1] > 13) {
-      plotclassj <- paste(clmeanrba[i,1]*100 + yearj)
-    }
+
     for (k in 1:length(plotspu)) {
       spk <-plotspu[k]
       incomm[startn,1] <- paste("MapCode ")

@@ -9,16 +9,18 @@ library(dplyr)
 
 # Read in data tables for KNN process
 lstoposub <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\data_shared\\Imputation Inputs\\csv_inputs\\lstopospout_v2.csv",header=T)
+youngcl <- read.csv("data\\landis_age_class_plot_young_stands_NH-MA_v0.csv",header=T)
 gmmout <- lstoposub %>% dplyr::select(mid, pid, class, classpred)
 pidkey <-  read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\data_shared\\Imputation Inputs\\csv_inputs\\plotids_up.csv",header=T) 
 pidkey <- pidkey %>% dplyr::select(pid, mid)
+spcodes <- read.csv("data\\landis_spcodes_NH-MA_v0.csv", header=T)
 
 # Create a table for "youngcl" to populated recently disturbed areas. Create from classes in gmmout.
 classes <- sort(unique(gmmout$class))
 youngAges <- 0:29 # Potential forest ages that can be derived from the Landsat disturbance record (Hansen or NAFD)
-# Probably need to move creation of this table lower to where spp have already been read in
-#youngcl <- data.frame(nspp = rep(1, length(classes) * length(youngAges)))
-#youngcl <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\data_output\\landis_age_class_plot_young_stands_adk_v0.csv",header=T)
+# Set some empty variables so code from earlier version doesn't break.
+sprucefirclasses <- c()
+nospfir <- c()
 #sid_not_used <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\data_output\\adk_sid_not_used_in_init_comm_v0.csv",header=T)
 #sid_not_used <- sid_not_used$x
 #pid_not_used <- pidkey$pid[which(pidkey$sid %in% sid_not_used)]
@@ -56,17 +58,20 @@ nrow(agecl)
 #"ostrvirg","piceabie","picemari","picerube","pinuresi","pinustro","pinusylv","popugran","poputrem","prunsero","querrubr",
 #"thujocci","tiliamer","tsugcana","ulmuamer")
 # You can type out the list here or use a command like the one below that you have customized to your data table/scheme
-spsim <- names(lstoposub)[grep("ACRU",names(lstoposub)):grep("TSCA", names(lstoposub))]
+spsim0 <- names(lstoposub)[grep("ACRU",names(lstoposub)):grep("TSCA", names(lstoposub))]
+spsim <- spcodes$spcode
 
 #now create the raster to hold input initcomm map and stack from which to extract probability values - predictors for Knn
 ## Also create raster to read in the forest class map map. This will be used to screen for plots that only belong to same class...
 ## All rasters should be masked using the rs raster. Set zeros in rs to zeros here.
 setwd("C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\data_shared\\Imputation Inputs\\rasters")
 rasterList <- dir()
+## All of these raster have to have the same number of rows and columns for this code to work.
+## Shared rasters didn't, so I re-extracted bands from the data used to make the GMM classification.
 class1 <- raster(rasterList[grep("GMM", rasterList)])
-elev1 <- raster(rasterList[grep("elev", rasterList)])
-age1 <- raster(rasterList[grep("hansen", rasterList)])
-mask1 <- raster(rasterList[grep("NLCD", rasterList)]) # Was adk_mask_0.bin but updated to adk_mask.bin 2020-02-26 to include woody wetlands and shrub class 52,90
+elev1 <- raster(rasterList[grep("elevation", rasterList)])
+age1 <- raster(rasterList[grep("hansenb4", rasterList)])
+mask1 <- raster(rasterList[grep("nlcd", rasterList)]) # Was adk_mask_0.bin but updated to adk_mask.bin 2020-02-26 to include woody wetlands and shrub class 52,90
 #extent.rs <- extent(elev1) # Olivia's class raster does not have the same dimensions as elev or age. Crop those to the class size I guess.
 extent.rs <- extent(class1)
 elev0 <- elev1
@@ -80,6 +85,8 @@ extent(elev1) <- extent(class1) # Line everything up to compare rasters on a cel
 class1[which(mask1[]==0)] <- 0
 mask1[which(class1[]==0)] <- 0
 # Save an original version of age raster for sampling at points (maintain NA)
+age1 <- age1 + 2000
+age1[which(age1[] == 2000)] <- 1
 ageNA <- age1
 age1[which(mask1[]==0)] <- 0
 # Age map is supposed to represent the age of disturbed areas at desired start year of simulation. Set to 2015 and subtract from Hansen raster
@@ -88,7 +95,7 @@ age1[which(mask1[]==0)] <- 0
 age1[which(age1[] > 2015)] <- 2015
 age1 <- age1 - 2015
 # Mask out zeros again
-age1[which(age1[] == -2015)] <- 0
+age1[which(age1[] < -100)] <- 0
 age1 <- abs(age1)
 plot(age1)
 
@@ -179,22 +186,19 @@ train3 <- subset(agecl,select=c("elevpid","eastpid","northpid"))
 enelev <- crop(enelev, extent.rs)
 
 # Reformat table youngcl so that it can be appended to agecl from plot data
-youngcl_tmp <- data.frame(matrix(nrow=nrow(youngcl),ncol=ncol(agecl),data=NA))
-names(youngcl_tmp) <- names(agecl)
-youngcl_tmp$class <- youngcl_tmp$classpred <- youngcl$class
-youngcl_tmp$mid <- youngcl$plot
+youngcl$mid <- youngcl$plot
 # Now extend triancl3 and pid3 with synthetic class values and pids for young disturbed pixels - generated in read_TFLG_for_inv_data_v2 - line741-
-traincl3 <- c(traincl3,youngcl_tmp$class)
-pid3 <- c(pid3,youngcl_tmp$mid)
+traincl3 <- c(traincl3,youngcl$class)
+pid3 <- c(pid3,youngcl$mid)
 
 ## Now create a loop to go through each class in class1 map, subset training data to just plots in that class, then do
 ## something with elevation to better match samples
 library(class)
-set.seed(984357)
+set.seed(3457)
 
 k <- mask1
 rowstarts <- seq(1,nrow(k),by=10)
-nnn = 10 # Set Number of nearest neighbors for knn!
+nnn = 5 #10 # Set Number of nearest neighbors for knn!
 maxage = max(age1[],na.rm=T) # 
 
 # If you want to test following loop with one row, use click(age1,cell=T) and click on raster plot
@@ -252,9 +256,9 @@ for (j in 1:length(rowstarts)) {
     ## Now reassign any young pixels (where age in cuts2 < maxage) to young age classes...
     # Need new young age codes for this set of plot data. Should start at number higher than n plots.
     if (any(cuts2[pixloc2] > 0 & cuts2[pixloc2] <= maxage,na.rm=T)) {
-      if (cl1[i] < 14) {
+      if (cl1[i] > 0) {
         cutinds2 <- which(cuts2[pixloc2] > 0 & cuts2[pixloc2] <= maxage & cltmp2[pixloc2] < 14) # Update from "read_TFLG_for_inv_data_v2.R" lines 741-
-        tempclass2 = as.integer(3000 + cltmp2[pixloc2][cutinds2]*100 + round(cuts2[pixloc2][cutinds2],digits=0))
+        tempclass2 = as.integer(1000 + cltmp2[pixloc2][cutinds2]*100 + round(cuts2[pixloc2][cutinds2],digits=0))
         tempclasses <- sort(unique(tempclass2))
         for (m in 1:length(tempclasses)) {
           tmpcli <- tempclasses[m]
@@ -273,27 +277,6 @@ for (j in 1:length(rowstarts)) {
         }
       rm(cutinds2,tempclass2,tempclasses)
       }
-      if (cl1[i] > 13) {
-        cutinds2 <- which(cuts2[pixloc2] > 0 & cuts2[pixloc2] <= maxage & cltmp2[pixloc2] > 13)
-        tempclass2 = as.integer(cltmp2[pixloc2][cutinds2]*100 + round(cuts2[pixloc2][cutinds2],digits=0))
-        tempclasses <- unique(tempclass2)
-        for (m in 1:length(tempclasses)) {
-          tmpcli <- tempclasses[m]
-          indsm <- which(tempclass2 == tmpcli)
-          np <- length(indsm)
-          npids <- length(pid3[which(traincl3 == tmpcli)])
-          if (np == 1 & npids > 1) {ki[cutinds2][indsm] <- sample(pid3[which(traincl3 == tmpcli)],2,replace=T)[1]
-          } ## "sample" doesn't work as desired when n = 1.
-          if (np > 1 & npids > 1) {
-            ki[cutinds2][indsm] = sample(pid3[which(traincl3 == tmpcli)],np,replace=T)
-          }
-          if (npids == 1) {## PROBLEM is that the number of PIDs is only 1. Need to MODIFY to catch this
-            ki[cutinds2][indsm] <- pid3[which(traincl3 == tmpcli)] 
-          }
-          rm(tmpcli,indsm,np)
-        }
-        rm(cutinds2,tempclass2,tempclasses)
-      }
     }
     
     #Sys.time()-s1
@@ -309,12 +292,15 @@ for (j in 1:length(rowstarts)) {
 Sys.time()-s1
 ## This took 1.857 mins!
 ## This took 10.94 hours
+
+# Resulting raster, k, now has for values one of 248 mid (plot id codes) from your data.
 kcopy <- k
 
 
 #Need another line here, don't want to replace younger forests id's > 1752 with older plot veg stuff.
-keepvals <- k[v][which(k[v] > 1263)] ## Only happens in FVS plots that were cut before 2010. Legacy code - not sure how to update for ADK.
-keeplocs <- which(k[v] > 1263)
+keepvals <- k[v][which(k[v] > 300)] ## Only happens in FVS plots that were cut before 2010. 
+# Legacy code - not sure how to update for ADK.
+keeplocs <- which(k[v] > 300)
 
 
 k[v] <- mid_mask
@@ -326,12 +312,13 @@ k[which(mask1[]==0)] <- 0
 
 ## Check for any errant pids, that are not in the list of possible plots in pid3 
 k[(which(!(k[] %in% pid3) & (k[] != 0)))] ## Appears to be one mystery value of 1,occuring at northern edges of landsat replace!
-k[(which(!(k[] %in% pid3) & (k[] != 0)))] <- sample(pid3[which(traincl3 == 3)],2,replace=T)[1] # replace with most common class
+# Find a way to replace if any occur. Line below is an example from ADK landscape.
+#k[(which(!(k[] %in% pid3) & (k[] != 0)))] <- sample(pid3[which(traincl3 == 3)],2,replace=T)[1] # replace with most common class
 
 #Write raster to new initial communities file.
 #rf <- writeRaster(rs, filename="gmnf_init_comm_v16b_masked_v2.bin", format="ENVI", 
 #                  overwrite=TRUE,datatype='INT2S')
-kout <- writeRaster(k, filename="adk_init_comm_v0.bin", format="ENVI", 
+kout <- writeRaster(k, filename="NH-MA_init_comm_v0", format="GTiff", 
                                       overwrite=TRUE,datatype='INT2S')
 #//////////////////////////////////////////////////////
 ## Seem to be losing some class representation that we want. Maybe I need to rewrite to only select nearest 

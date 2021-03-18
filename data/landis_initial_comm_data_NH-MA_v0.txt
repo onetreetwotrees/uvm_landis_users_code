@@ -1,1778 +1,1778 @@
-LandisData "Initial Communities"                
+LandisData "Initial Communities"                  
                    
 MapCode 0                   
                    
 MapCode  1                  
-BETUALLE 78                  
-BETULENT 112                  
+BETUALLE 83                  
+BETULENT 93                  
 PINUSTRO 78                  
-QUERALBA 87                  
-TILIAMER 78                  
-TSUGCANA 112                  
+QUERALBA 93                  
+TILIAMER 83                  
+TSUGCANA 93                  
                    
 MapCode  2                  
-BETUALLE 96                  
-BETULENT 49                  
-CARYCORD 48                  
-PINUSTRO 96                  
-QUERALBA 49                  
-QUERRUBR 49                  
+BETUALLE 93                  
+BETULENT 69                  
+CARYCORD 69                  
+PINUSTRO 69                  
+QUERALBA 69                  
+QUERRUBR 80                  
                    
 MapCode  3                  
-QUERRUBR 93                  
-                   
-MapCode  4                  
-BETULENT 81                  
-CARYCORD 91                  
-PINURESI 81                  
-PINUSTRO 91                  
-PRUNSERO 81                  
-QUERALBA 87                  
-QUERRUBR 91                  
-TILIAMER 81                  
-                   
-MapCode  5                  
-ACERRUBR 96                  
-BETULENT 92                  
-BETUPAPY 96                  
-FAGUGRAN 92                  
-PINUSTRO 56                  
-QUERALBA 92                  
 QUERRUBR 96                  
                    
+MapCode  4                  
+BETULENT 104                  
+CARYCORD 79                  
+PINURESI 104                  
+PINUSTRO 104                  
+PRUNSERO 79                  
+QUERALBA 82                  
+QUERRUBR 104                  
+TILIAMER 79                  
+                   
+MapCode  5                  
+ACERRUBR 76                  
+BETULENT 55                  
+BETUPAPY 76                  
+FAGUGRAN 45                  
+PINUSTRO 55                  
+QUERALBA 76                  
+QUERRUBR 76                  
+                   
 MapCode  6                  
-CARYCORD 57                  
-PINUSTRO 68                  
-PRUNSERO 70                  
-QUERALBA 68                  
-QUERRUBR 57                  
+CARYCORD 89                  
+PINUSTRO 96                  
+PRUNSERO 89                  
+QUERALBA 95                  
+QUERRUBR 96                  
                    
 MapCode  7                  
-BETULENT 67                  
-PINUSTRO 53                  
-QUERALBA 67                  
-QUERRUBR 47                  
+BETULENT 38                  
+PINUSTRO 87                  
+QUERALBA 87                  
+QUERRUBR 44                  
                    
 MapCode  8                  
-ACERRUBR 95                  
-BETUPAPY 75                  
-CARYCORD 78                  
-PINUSTRO 95                  
-PRUNSERO 95                  
-QUERALBA 78                  
+ACERRUBR 83                  
+BETUPAPY 83                  
+CARYCORD 87                  
+PINUSTRO 83                  
+PRUNSERO 83                  
+QUERALBA 83                  
                    
 MapCode  9                  
-ACERRUBR 81                  
-PINUSTRO 55                  
-QUERALBA 81                  
-QUERRUBR 52                  
+ACERRUBR 99                  
+PINUSTRO 86                  
+QUERALBA 99                  
+QUERRUBR 103                  
                    
 MapCode  10                  
-PINUSTRO 101                  
-QUERALBA 49                  
-QUERRUBR 57                  
+PINUSTRO 67                  
+QUERALBA 103                  
+QUERRUBR 90                  
                    
 MapCode  11                  
 BETULENT 97                  
-BETUPAPY 59                  
-FAGUGRAN 74                  
-PINUSTRO 59                  
-QUERALBA 74                  
+BETUPAPY 96                  
+FAGUGRAN 77                  
+PINUSTRO 77                  
+QUERALBA 96                  
 QUERRUBR 97                  
                    
 MapCode  12                  
-CARYCORD 103                  
-PINUSTRO 76                  
-QUERALBA 61                  
-QUERRUBR 103                  
+CARYCORD 62                  
+PINUSTRO 105                  
+QUERALBA 88                  
+QUERRUBR 88                  
                    
 MapCode  13                  
-ACERRUBR 92                  
-BETUPAPY 87                  
-CARYCORD 87                  
-PINUSTRO 87                  
-POPUGRAN 71                  
-QUERALBA 92                  
-QUERRUBR 87                  
+ACERRUBR 108                  
+BETUPAPY 79                  
+CARYCORD 79                  
+PINUSTRO 108                  
+POPUGRAN 79                  
+QUERALBA 82                  
+QUERRUBR 82                  
                    
 MapCode  14                  
-FAGUGRAN 51                  
-PINUSTRO 51                  
-QUERALBA 84                  
-QUERRUBR 98                  
+FAGUGRAN 104                  
+PINUSTRO 66                  
+QUERALBA 86                  
+QUERRUBR 66                  
                    
 MapCode  15                  
-ACERRUBR 84                  
-BETUPAPY 50                  
-FAGUGRAN 84                  
-PINUSTRO 40                  
-QUERALBA 84                  
-QUERRUBR 84                  
+ACERRUBR 47                  
+BETUPAPY 88                  
+FAGUGRAN 88                  
+PINUSTRO 61                  
+QUERALBA 88                  
+QUERRUBR 47                  
                    
 MapCode  16                  
-ACERRUBR 54                  
-PINUSTRO 30                  
-PRUNSERO 56                  
-QUERRUBR 56                  
+ACERRUBR 52                  
+PINUSTRO 46                  
+PRUNSERO 71                  
+QUERRUBR 46                  
                    
 MapCode  17                  
-PINURESI 69                  
-PINUSTRO 69                  
-QUERRUBR 83                  
-TSUGCANA 86                  
+PINURESI 113                  
+PINUSTRO 100                  
+QUERRUBR 72                  
+TSUGCANA 100                  
                    
 MapCode  18                  
-PINURESI 65                  
+PINURESI 88                  
                    
 MapCode  19                  
-ACERRUBR 56                  
-BETUPAPY 56                  
-PINUSTRO 56                  
-QUERALBA 101                  
-QUERRUBR 90                  
-TSUGCANA 90                  
+ACERRUBR 99                  
+BETUPAPY 99                  
+PINUSTRO 99                  
+QUERALBA 99                  
+QUERRUBR 100                  
+TSUGCANA 49                  
                    
 MapCode  20                  
-ACERRUBR 70                  
-BETUALLE 98                  
-BETUPAPY 108                  
-PINUSTRO 70                  
-QUERRUBR 70                  
-TSUGCANA 70                  
+ACERRUBR 94                  
+BETUALLE 73                  
+BETUPAPY 73                  
+PINUSTRO 94                  
+QUERRUBR 51                  
+TSUGCANA 51                  
                    
 MapCode  21                  
-ACERRUBR 91                  
-PINUSTRO 89                  
-PRUNSERO 78                  
-QUERRUBR 91                  
-TSUGCANA 78                  
+ACERRUBR 39                  
+PINUSTRO 39                  
+PRUNSERO 66                  
+QUERRUBR 62                  
+TSUGCANA 62                  
                    
 MapCode  22                  
-ACERRUBR 85                  
-BETUALLE 82                  
-BETUPAPY 107                  
-FRAXAMER 82                  
-QUERRUBR 85                  
-TSUGCANA 82                  
+ACERRUBR 86                  
+BETUALLE 90                  
+BETUPAPY 90                  
+FRAXAMER 90                  
+QUERRUBR 90                  
+TSUGCANA 89                  
                    
 MapCode  23                  
-ACERRUBR 90                  
-BETUALLE 91                  
-FRAXAMER 59                  
-PINUSTRO 59                  
-PRUNSERO 91                  
+ACERRUBR 88                  
+BETUALLE 88                  
+FRAXAMER 109                  
+PINUSTRO 88                  
+PRUNSERO 110                  
                    
 MapCode  24                  
-ACERRUBR 57                  
-ACERSACC 87                  
-BETUALLE 57                  
-BETUPAPY 87                  
-PRUNSERO 57                  
-QUERRUBR 64                  
+ACERRUBR 66                  
+ACERSACC 66                  
+BETUALLE 44                  
+BETUPAPY 66                  
+PRUNSERO 66                  
+QUERRUBR 57                  
                    
 MapCode  25                  
-ACERRUBR 76                  
-BETUPAPY 87                  
-PINUSTRO 87                  
-QUERRUBR 96                  
-TSUGCANA 96                  
+ACERRUBR 92                  
+BETUPAPY 121                  
+PINUSTRO 100                  
+QUERRUBR 92                  
+TSUGCANA 92                  
                    
 MapCode  26                  
-ACERRUBR 88                  
-FRAXAMER 84                  
-PINUSTRO 107                  
-PRUNSERO 84                  
+ACERRUBR 63                  
+FRAXAMER 73                  
+PINUSTRO 73                  
+PRUNSERO 97                  
                    
 MapCode  27                  
-ACERRUBR 73                  
-BETUPAPY 84                  
-PINUSTRO 87                  
-TSUGCANA 73                  
+ACERRUBR 76                  
+BETUPAPY 93                  
+PINUSTRO 94                  
+TSUGCANA 76                  
                    
 MapCode  28                  
-ACERRUBR 64                  
-PINUSTRO 60                  
+ACERRUBR 28                  
+PINUSTRO 6                  
                    
 MapCode  29                  
-ACERRUBR 94                  
-BETUPAPY 52                  
-FAGUGRAN 70                  
-PINUSTRO 70                  
-QUERRUBR 70                  
+ACERRUBR 58                  
+BETUPAPY 69                  
+FAGUGRAN 42                  
+PINUSTRO 42                  
+QUERRUBR 69                  
                    
 MapCode  30                  
-ACERRUBR 100                  
-PINUSTRO 97                  
-QUERRUBR 70                  
-TSUGCANA 70                  
+ACERRUBR 99                  
+PINUSTRO 78                  
+QUERRUBR 55                  
+TSUGCANA 99                  
                    
 MapCode  31                  
-ACERRUBR 65                  
+ACERRUBR 95                  
+BETUPAPY 58                  
+FAGUGRAN 95                  
+PINUSTRO 95                  
+PRUNSERO 95                  
+QUERRUBR 95                  
+TSUGCANA 90                  
+                   
+MapCode  32                  
+ACERRUBR 86                  
+PINUSTRO 106                  
+QUERRUBR 86                  
+TSUGCANA 100                  
+                   
+MapCode  33                  
+ACERRUBR 73                  
+BETUPAPY 95                  
+FAGUGRAN 82                  
+PINUSTRO 73                  
+QUERRUBR 95                  
+TSUGCANA 73                  
+                   
+MapCode  34                  
+ACERRUBR 101                  
+PINUSTRO 67                  
+QUERALBA 101                  
+QUERRUBR 66                  
+                   
+MapCode  35                  
+ACERRUBR 72                  
+BETUALLE 72                  
+BETUPAPY 52                  
+FRAXAMER 107                  
+PINUSTRO 72                  
+PRUNSERO 72                  
+TSUGCANA 107                  
+                   
+MapCode  36                  
+ACERRUBR 80                  
+BETUPAPY 53                  
+QUERRUBR 60                  
+                   
+MapCode  37                  
+ACERRUBR 45                  
+BETUALLE 34                  
+BETUPAPY 51                  
+QUERRUBR 34                  
+                   
+MapCode  38                  
+ACERRUBR 59                  
+BETUPAPY 59                  
+FRAXAMER 84                  
+POPUTREM 88                  
+QUERRUBR 88                  
+                   
+MapCode  39                  
+ACERRUBR 44                  
+QUERALBA 83                  
+QUERRUBR 81                  
+                   
+MapCode  40                  
+PRUNSERO 29                  
+QUERRUBR 26                  
+                   
+MapCode  41                  
+ACERRUBR 73                  
+FAGUGRAN 68                  
+PINUSTRO 68                  
+QUERALBA 71                  
+QUERRUBR 73                  
+                   
+MapCode  42                  
+ACERRUBR 51                  
+BETUALLE 64                  
+BETUPAPY 86                  
+FRAXAMER 51                  
+PINUSTRO 64                  
+                   
+MapCode  44                  
+ACERRUBR 107                  
+FRAXAMER 68                  
+PINUSTRO 68                  
+PRUNSERO 105                  
+QUERRUBR 68                  
+                   
+MapCode  45                  
+ACERRUBR 99                  
+PINUSTRO 52                  
+QUERRUBR 97                  
+                   
+MapCode  46                  
+ACERRUBR 58                  
+QUERALBA 56                  
+QUERRUBR 75                  
+                   
+MapCode  47                  
+ACERRUBR 97                  
+BETUPAPY 97                  
+PINUSTRO 72                  
+QUERALBA 97                  
+QUERRUBR 72                  
+TSUGCANA 53                  
+                   
+MapCode  48                  
+ACERRUBR 51                  
+ACERSACC 51                  
+BETUPAPY 68                  
+FAGUGRAN 92                  
+PINUSTRO 51                  
+QUERALBA 68                  
+QUERRUBR 92                  
+TSUGCANA 92                  
+                   
+MapCode  49                  
+ACERRUBR 67                  
+BETUPAPY 57                  
+PINUSTRO 67                  
+PRUNSERO 87                  
+                   
+MapCode  50                  
+ACERRUBR 76                  
+BETUALLE 123                  
+BETUPAPY 117                  
+QUERRUBR 117                  
+TSUGCANA 76                  
+                   
+MapCode  51                  
+ACERRUBR 111                  
+ACERSACC 95                  
+BETUALLE 95                  
+BETUPAPY 100                  
+FRAXAMER 95                  
+PINUSTRO 95                  
+QUERRUBR 95                  
+TSUGCANA 111                  
+                   
+MapCode  52                  
+ACERRUBR 93                  
+BETUALLE 77                  
+FAGUGRAN 77                  
+FRAXAMER 93                  
+PINUSTRO 79                  
+QUERALBA 93                  
+QUERRUBR 79                  
+TSUGCANA 93                  
+                   
+MapCode  53                  
+ACERRUBR 90                  
+PINUSTRO 85                  
+QUERALBA 102                  
+QUERRUBR 90                  
+                   
+MapCode  54                  
+ACERRUBR 76                  
+BETUALLE 64                  
 BETUPAPY 76                  
-FAGUGRAN 76                  
-PINUSTRO 116                  
-PRUNSERO 65                  
+FRAXAMER 60                  
+PINUSTRO 76                  
+PRUNSERO 76                  
+QUERALBA 76                  
 QUERRUBR 76                  
 TSUGCANA 76                  
                    
-MapCode  32                  
-ACERRUBR 72                  
-PINUSTRO 72                  
-QUERRUBR 88                  
-TSUGCANA 72                  
-                   
-MapCode  33                  
-ACERRUBR 65                  
-BETUPAPY 65                  
-FAGUGRAN 92                  
-PINUSTRO 92                  
-QUERRUBR 42                  
-TSUGCANA 92                  
-                   
-MapCode  34                  
-ACERRUBR 74                  
-PINUSTRO 84                  
-QUERALBA 84                  
-QUERRUBR 81                  
-                   
-MapCode  35                  
-ACERRUBR 67                  
-BETUALLE 67                  
-BETUPAPY 102                  
-FRAXAMER 67                  
-PINUSTRO 105                  
-PRUNSERO 102                  
-TSUGCANA 67                  
-                   
-MapCode  36                  
-ACERRUBR 66                  
-BETUPAPY 84                  
-QUERRUBR 57                  
-                   
-MapCode  37                  
-ACERRUBR 83                  
-BETUALLE 83                  
-BETUPAPY 38                  
-QUERRUBR 64                  
-                   
-MapCode  38                  
-ACERRUBR 65                  
-BETUPAPY 65                  
-FRAXAMER 65                  
-POPUTREM 67                  
-QUERRUBR 67                  
-                   
-MapCode  39                  
-ACERRUBR 58                  
-QUERALBA 55                  
-QUERRUBR 99                  
-                   
-MapCode  40                  
-PRUNSERO 16                  
-QUERRUBR 11                  
-                   
-MapCode  41                  
-ACERRUBR 59                  
-FAGUGRAN 29                  
-PINUSTRO 59                  
-QUERALBA 52                  
-QUERRUBR 29                  
-                   
-MapCode  42                  
-ACERRUBR 39                  
-BETUALLE 49                  
-BETUPAPY 49                  
-FRAXAMER 44                  
-PINUSTRO 49                  
-                   
-MapCode  44                  
-ACERRUBR 52                  
-FRAXAMER 72                  
-PINUSTRO 108                  
-PRUNSERO 72                  
-QUERRUBR 72                  
-                   
-MapCode  45                  
-ACERRUBR 72                  
-PINUSTRO 96                  
-QUERRUBR 96                  
-                   
-MapCode  46                  
-ACERRUBR 66                  
-QUERALBA 58                  
-QUERRUBR 82                  
-                   
-MapCode  47                  
-ACERRUBR 54                  
-BETUPAPY 100                  
-PINUSTRO 100                  
-QUERALBA 54                  
-QUERRUBR 85                  
-TSUGCANA 85                  
-                   
-MapCode  48                  
-ACERRUBR 48                  
-ACERSACC 88                  
-BETUPAPY 48                  
-FAGUGRAN 87                  
-PINUSTRO 48                  
-QUERALBA 88                  
-QUERRUBR 48                  
-TSUGCANA 87                  
-                   
-MapCode  49                  
-ACERRUBR 103                  
-BETUPAPY 88                  
-PINUSTRO 103                  
-PRUNSERO 62                  
-                   
-MapCode  50                  
-ACERRUBR 87                  
-BETUALLE 109                  
-BETUPAPY 87                  
-QUERRUBR 97                  
-TSUGCANA 109                  
-                   
-MapCode  51                  
-ACERRUBR 67                  
-ACERSACC 75                  
-BETUALLE 67                  
-BETUPAPY 67                  
-FRAXAMER 67                  
-PINUSTRO 85                  
-QUERRUBR 85                  
-TSUGCANA 75                  
-                   
-MapCode  52                  
-ACERRUBR 102                  
-BETUALLE 102                  
-FAGUGRAN 83                  
-FRAXAMER 83                  
-PINUSTRO 58                  
-QUERALBA 102                  
-QUERRUBR 102                  
-TSUGCANA 102                  
-                   
-MapCode  53                  
-ACERRUBR 62                  
-PINUSTRO 62                  
-QUERALBA 86                  
-QUERRUBR 101                  
-                   
-MapCode  54                  
-ACERRUBR 75                  
-BETUALLE 75                  
-BETUPAPY 75                  
-FRAXAMER 91                  
-PINUSTRO 75                  
-PRUNSERO 100                  
-QUERALBA 100                  
-QUERRUBR 75                  
-TSUGCANA 75                  
-                   
 MapCode  55                  
-ACERRUBR 91                  
-BETUPAPY 83                  
-PINUSTRO 82                  
-QUERALBA 82                  
-QUERRUBR 91                  
+ACERRUBR 106                  
+BETUPAPY 94                  
+PINUSTRO 51                  
+QUERALBA 94                  
+QUERRUBR 94                  
                    
 MapCode  56                  
-ACERRUBR 107                  
-BETUPAPY 107                  
-PINUSTRO 95                  
-QUERALBA 107                  
-QUERRUBR 107                  
-TSUGCANA 107                  
+ACERRUBR 128                  
+BETUPAPY 128                  
+PINUSTRO 130                  
+QUERALBA 128                  
+QUERRUBR 129                  
+TSUGCANA 128                  
                    
 MapCode  57                  
-ACERRUBR 102                  
-BETUPAPY 102                  
-PINUSTRO 77                  
-QUERALBA 77                  
-QUERRUBR 102                  
-TSUGCANA 113                  
+ACERRUBR 93                  
+BETUPAPY 89                  
+PINUSTRO 108                  
+QUERALBA 108                  
+QUERRUBR 89                  
+TSUGCANA 89                  
                    
 MapCode  58                  
-ACERRUBR 77                  
-BETUPAPY 95                  
-FRAXAMER 77                  
-PINUSTRO 95                  
-QUERCOCC 88                  
-QUERRUBR 77                  
+ACERRUBR 87                  
+BETUPAPY 68                  
+FRAXAMER 87                  
+PINUSTRO 87                  
+QUERCOCC 68                  
+QUERRUBR 68                  
                    
 MapCode  59                  
-ACERRUBR 106                  
-PINUSTRO 106                  
-QUERALBA 106                  
-QUERRUBR 106                  
-TSUGCANA 114                  
+ACERRUBR 124                  
+PINUSTRO 71                  
+QUERALBA 115                  
+QUERRUBR 115                  
+TSUGCANA 71                  
                    
 MapCode  60                  
-ACERRUBR 103                  
-BETUALLE 103                  
-PINUSTRO 89                  
-QUERALBA 120                  
-QUERRUBR 89                  
-TSUGCANA 120                  
+ACERRUBR 129                  
+BETUALLE 78                  
+PINUSTRO 78                  
+QUERALBA 78                  
+QUERRUBR 129                  
+TSUGCANA 116                  
                    
 MapCode  61                  
-ACERRUBR 68                  
-BETUALLE 64                  
-BETUPAPY 64                  
-FAGUGRAN 81                  
-POPUTREM 64                  
-PRUNSERO 81                  
-QUERRUBR 68                  
-TSUGCANA 81                  
+ACERRUBR 100                  
+BETUALLE 100                  
+BETUPAPY 41                  
+FAGUGRAN 65                  
+POPUTREM 100                  
+PRUNSERO 100                  
+QUERRUBR 65                  
+TSUGCANA 65                  
                    
 MapCode  62                  
-ACERRUBR 75                  
-BETUPAPY 75                  
-FRAXAMER 75                  
-PINUSTRO 89                  
+ACERRUBR 102                  
+BETUPAPY 95                  
+FRAXAMER 80                  
+PINUSTRO 80                  
+PRUNSERO 95                  
+QUERRUBR 102                  
+                   
+MapCode  63                  
+ACERRUBR 80                  
+PINURESI 80                  
+PINUSTRO 82                  
+QUERALBA 97                  
+QUERCOCC 80                  
+QUERRUBR 80                  
+                   
+MapCode  64                  
+ACERRUBR 58                  
+PINUSTRO 54                  
+QUERALBA 58                  
+QUERRUBR 35                  
+                   
+MapCode  65                  
+ACERRUBR 91                  
+BETUALLE 102                  
+PINUSTRO 86                  
+TSUGCANA 86                  
+                   
+MapCode  66                  
+ACERRUBR 56                  
+ACERSACC 86                  
+FRAXAMER 86                  
+PINUSTRO 94                  
+QUERRUBR 94                  
+TSUGCANA 56                  
+                   
+MapCode  67                  
+ACERRUBR 76                  
+BETUPAPY 80                  
+PINUSTRO 80                  
+QUERALBA 80                  
+QUERRUBR 74                  
+                   
+MapCode  68                  
+ACERRUBR 68                  
+BETUPAPY 68                  
+PINUSTRO 93                  
+PRUNSERO 68                  
+QUERCOCC 51                  
+QUERRUBR 93                  
+TSUGCANA 51                  
+                   
+MapCode  69                  
+FRAXAMER 5                  
+PRUNSERO 0                  
+                   
+MapCode  70                  
+ACERRUBR 79                  
+BETUALLE 78                  
+QUERRUBR 92                  
+                   
+MapCode  71                  
+ACERRUBR 71                  
+BETUPAPY 82                  
+FRAXAMER 71                  
+PINUSTRO 61                  
+POPUTREM 61                  
+PRUNSERO 61                  
+QUERALBA 71                  
+QUERRUBR 61                  
+                   
+MapCode  72                  
+ACERRUBR 66                  
+ACERSACC 57                  
+BETUPAPY 103                  
+FRAXAMER 103                  
+PINUSTRO 66                  
+QUERALBA 103                  
+QUERRUBR 66                  
+TSUGCANA 103                  
+                   
+MapCode  73                  
+ACERRUBR 72                  
+PINUSTRO 62                  
+QUERALBA 72                  
+QUERCOCC 69                  
+                   
+MapCode  74                  
+ACERRUBR 69                  
+BETUPAPY 69                  
+PINURESI 99                  
+PINUSTRO 99                  
 PRUNSERO 99                  
 QUERRUBR 89                  
                    
-MapCode  63                  
-ACERRUBR 93                  
-PINURESI 46                  
-PINUSTRO 46                  
-QUERALBA 45                  
-QUERCOCC 45                  
-QUERRUBR 93                  
-                   
-MapCode  64                  
-ACERRUBR 57                  
-PINUSTRO 88                  
-QUERALBA 57                  
-QUERRUBR 50                  
-                   
-MapCode  65                  
-ACERRUBR 81                  
-BETUALLE 89                  
-PINUSTRO 60                  
-TSUGCANA 89                  
-                   
-MapCode  66                  
-ACERRUBR 82                  
-ACERSACC 89                  
-FRAXAMER 89                  
-PINUSTRO 82                  
-QUERRUBR 82                  
-TSUGCANA 95                  
-                   
-MapCode  67                  
-ACERRUBR 95                  
-BETUPAPY 48                  
-PINUSTRO 95                  
-QUERALBA 59                  
-QUERRUBR 95                  
-                   
-MapCode  68                  
-ACERRUBR 45                  
-BETUPAPY 47                  
-PINUSTRO 45                  
-PRUNSERO 66                  
-QUERCOCC 66                  
-QUERRUBR 45                  
-TSUGCANA 47                  
-                   
-MapCode  69                  
-FRAXAMER 11                  
-PRUNSERO 22                  
-                   
-MapCode  70                  
-ACERRUBR 61                  
-BETUALLE 71                  
-QUERRUBR 64                  
-                   
-MapCode  71                  
-ACERRUBR 100                  
-BETUPAPY 91                  
-FRAXAMER 91                  
-PINUSTRO 91                  
-POPUTREM 96                  
-PRUNSERO 91                  
-QUERALBA 91                  
-QUERRUBR 91                  
-                   
-MapCode  72                  
-ACERRUBR 85                  
-ACERSACC 73                  
-BETUPAPY 73                  
-FRAXAMER 85                  
-PINUSTRO 73                  
-QUERALBA 91                  
-QUERRUBR 73                  
-TSUGCANA 73                  
-                   
-MapCode  73                  
-ACERRUBR 84                  
-PINUSTRO 91                  
-QUERALBA 89                  
-QUERCOCC 84                  
-                   
-MapCode  74                  
-ACERRUBR 116                  
-BETUPAPY 68                  
-PINURESI 85                  
-PINUSTRO 85                  
-PRUNSERO 85                  
-QUERRUBR 116                  
-                   
 MapCode  75                  
-ACERRUBR 82                  
-BETUALLE 97                  
-BETUPAPY 82                  
-PINUSTRO 105                  
-QUERALBA 105                  
-QUERRUBR 82                  
+ACERRUBR 97                  
+BETUALLE 62                  
+BETUPAPY 97                  
+PINUSTRO 97                  
+QUERALBA 52                  
+QUERRUBR 62                  
                    
 MapCode  76                  
-ACERRUBR 67                  
-PINUSTRO 67                  
-QUERALBA 48                  
-QUERCOCC 67                  
-QUERRUBR 52                  
+ACERRUBR 100                  
+PINUSTRO 100                  
+QUERALBA 58                  
+QUERCOCC 65                  
+QUERRUBR 65                  
                    
 MapCode  77                  
-QUERALBA 76                  
-QUERCOCC 87                  
-QUERRUBR 69                  
+QUERALBA 91                  
+QUERCOCC 67                  
+QUERRUBR 87                  
                    
 MapCode  78                  
-ACERRUBR 76                  
-BETUALLE 67                  
-BETUPAPY 63                  
-QUERALBA 63                  
-QUERRUBR 76                  
+ACERRUBR 105                  
+BETUALLE 74                  
+BETUPAPY 74                  
+QUERALBA 87                  
+QUERRUBR 74                  
                    
 MapCode  79                  
-ACERRUBR 48                  
-PINUSTRO 54                  
-QUERALBA 42                  
-QUERCOCC 48                  
+ACERRUBR 80                  
+PINUSTRO 80                  
+QUERALBA 26                  
+QUERCOCC 25                  
                    
 MapCode  80                  
-PINUSTRO 34                  
-QUERALBA 81                  
-QUERRUBR 54                  
+PINUSTRO 77                  
+QUERALBA 57                  
+QUERRUBR 48                  
                    
 MapCode  81                  
-ACERRUBR 40                  
-PINUSTRO 40                  
-QUERALBA 77                  
-QUERRUBR 71                  
-                   
-MapCode  82                  
-PINUSTRO 69                  
-QUERRUBR 44                  
-                   
-MapCode  83                  
-ACERRUBR 76                  
-ACERSACC 47                  
-PINUSTRO 60                  
-QUERALBA 76                  
-QUERRUBR 76                  
-                   
-MapCode  84                  
-ACERRUBR 85                  
-PINUSTRO 94                  
-POPUTREM 85                  
-QUERALBA 40                  
-QUERRUBR 85                  
-                   
-MapCode  85                  
-ACERRUBR 89                  
-QUERALBA 57                  
-QUERRUBR 96                  
-                   
-MapCode  86                  
-ACERRUBR 56                  
-BETUALLE 57                  
-FRAXAMER 52                  
-                   
-MapCode  87                  
-ACERRUBR 48                  
-PINUSTRO 48                  
-QUERALBA 77                  
+ACERRUBR 69                  
+PINUSTRO 45                  
+QUERALBA 45                  
 QUERRUBR 56                  
                    
+MapCode  82                  
+PINUSTRO 65                  
+QUERRUBR 39                  
+                   
+MapCode  83                  
+ACERRUBR 95                  
+ACERSACC 39                  
+PINUSTRO 39                  
+QUERALBA 75                  
+QUERRUBR 95                  
+                   
+MapCode  84                  
+ACERRUBR 87                  
+PINUSTRO 93                  
+POPUTREM 93                  
+QUERALBA 87                  
+QUERRUBR 44                  
+                   
+MapCode  85                  
+ACERRUBR 70                  
+QUERALBA 53                  
+QUERRUBR 81                  
+                   
+MapCode  86                  
+ACERRUBR 102                  
+BETUALLE 53                  
+FRAXAMER 46                  
+                   
+MapCode  87                  
+ACERRUBR 43                  
+PINUSTRO 43                  
+QUERALBA 64                  
+QUERRUBR 37                  
+                   
 MapCode  88                  
-PINUSTRO 50                  
-QUERALBA 50                  
-QUERCOCC 65                  
-QUERRUBR 77                  
+PINUSTRO 58                  
+QUERALBA 52                  
+QUERCOCC 55                  
+QUERRUBR 52                  
                    
 MapCode  89                  
-ACERRUBR 61                  
-BETUPAPY 61                  
-PINURESI 54                  
-PINUSTRO 94                  
-POPUTREM 94                  
+ACERRUBR 91                  
+BETUPAPY 78                  
+PINURESI 91                  
+PINUSTRO 91                  
+POPUTREM 91                  
 QUERALBA 54                  
-QUERCOCC 61                  
-QUERRUBR 61                  
+QUERCOCC 78                  
+QUERRUBR 54                  
                    
 MapCode  90                  
-ACERRUBR 64                  
-PINUSTRO 72                  
-QUERALBA 86                  
-QUERCOCC 64                  
-QUERRUBR 64                  
+ACERRUBR 91                  
+PINUSTRO 84                  
+QUERALBA 84                  
+QUERCOCC 84                  
+QUERRUBR 86                  
                    
 MapCode  91                  
-ACERRUBR 80                  
-PINUSTRO 94                  
-QUERALBA 66                  
-QUERCOCC 66                  
-QUERRUBR 80                  
+ACERRUBR 50                  
+PINUSTRO 50                  
+QUERALBA 50                  
+QUERCOCC 42                  
+QUERRUBR 35                  
                    
 MapCode  92                  
-ACERRUBR 48                  
-ACERSACC 7                  
-BETUALLE 58                  
-FAGUGRAN 7                  
-FRAXAMER 48                  
-QUERRUBR 48                  
-TSUGCANA 48                  
+ACERRUBR 45                  
+ACERSACC 56                  
+BETUALLE 45                  
+FAGUGRAN 15                  
+FRAXAMER 15                  
+QUERRUBR 56                  
+TSUGCANA 56                  
                    
 MapCode  93                  
-ACERRUBR 105                  
-BETUALLE 80                  
-BETUPAPY 105                  
-FAGUGRAN 80                  
-FRAXAMER 52                  
-PINUSTRO 105                  
-QUERRUBR 80                  
+ACERRUBR 77                  
+BETUALLE 77                  
+BETUPAPY 103                  
+FAGUGRAN 103                  
+FRAXAMER 77                  
+PINUSTRO 96                  
+QUERRUBR 103                  
                    
 MapCode  94                  
-ACERRUBR 49                  
-BETUALLE 32                  
-BETUPAPY 32                  
-PINUSTRO 49                  
-PRUNSERO 32                  
-QUERCOCC 10                  
-QUERRUBR 49                  
-TSUGCANA 49                  
+ACERRUBR 56                  
+BETUALLE 33                  
+BETUPAPY 48                  
+PINUSTRO 56                  
+PRUNSERO 33                  
+QUERCOCC 56                  
+QUERRUBR 56                  
+TSUGCANA 33                  
                    
 MapCode  95                  
-ACERRUBR 116                  
-BETUALLE 95                  
-BETUPAPY 95                  
-PINUSTRO 95                  
-QUERRUBR 116                  
-TSUGCANA 78                  
+ACERRUBR 111                  
+BETUALLE 77                  
+BETUPAPY 77                  
+PINUSTRO 96                  
+QUERRUBR 96                  
+TSUGCANA 77                  
                    
 MapCode  96                  
-ACERRUBR 116                  
-FAGUGRAN 95                  
-PINURESI 62                  
-QUERRUBR 95                  
-TSUGCANA 62                  
+ACERRUBR 57                  
+FAGUGRAN 55                  
+PINURESI 64                  
+QUERRUBR 64                  
+TSUGCANA 64                  
                    
 MapCode  97                  
-ACERRUBR 45                  
-BETUALLE 70                  
-FAGUGRAN 57                  
-QUERRUBR 45                  
+ACERRUBR 59                  
+BETUALLE 39                  
+FAGUGRAN 59                  
+QUERRUBR 42                  
                    
 MapCode  98                  
+ACERRUBR 60                  
+BETUALLE 57                  
+BETUPAPY 60                  
+FAGUGRAN 60                  
+FRAXAMER 54                  
+PRUNSERO 54                  
+QUERRUBR 54                  
+TSUGCANA 60                  
+                   
+MapCode  99                  
+ACERRUBR 88                  
+PINUSTRO 109                  
+PRUNSERO 59                  
+QUERALBA 88                  
+QUERRUBR 109                  
+                   
+MapCode  100                  
+ACERRUBR 80                  
+FRAXAMER 76                  
+QUERALBA 76                  
+QUERCOCC 95                  
+QUERRUBR 76                  
+                   
+MapCode  101                  
+ACERRUBR 73                  
+QUERALBA 44                  
+QUERCOCC 44                  
+QUERRUBR 44                  
+TSUGCANA 38                  
+                   
+MapCode  102                  
+ACERSACC 79                  
+PINUSTRO 59                  
+POPUTREM 79                  
+QUERRUBR 72                  
+                   
+MapCode  103                  
+QUERALBA 36                  
+QUERCOCC 41                  
+QUERRUBR 59                  
+                   
+MapCode  104                  
+ACERRUBR 77                  
+QUERALBA 77                  
+QUERCOCC 28                  
+QUERRUBR 61                  
+                   
+MapCode  105                  
+ACERRUBR 86                  
+PINUSTRO 49                  
+QUERALBA 49                  
+QUERRUBR 49                  
+TSUGCANA 86                  
+                   
+MapCode  106                  
+QUERALBA 50                  
+QUERCOCC 53                  
+QUERRUBR 10                  
+                   
+MapCode  107                  
+ACERRUBR 82                  
+BETUALLE 55                  
+PINUSTRO 79                  
+QUERALBA 55                  
+QUERCOCC 55                  
+TSUGCANA 82                  
+                   
+MapCode  108                  
+ACERRUBR 35                  
+BETUALLE 81                  
+PINUSTRO 59                  
+TSUGCANA 59                  
+                   
+MapCode  109                  
+ACERRUBR 98                  
+QUERALBA 98                  
+QUERCOCC 56                  
+QUERRUBR 67                  
+                   
+MapCode  110                  
+ACERRUBR 81                  
+QUERCOCC 55                  
+QUERRUBR 86                  
+                   
+MapCode  111                  
+ACERRUBR 48                  
+QUERALBA 54                  
+QUERCOCC 54                  
+QUERRUBR 40                  
+                   
+MapCode  112                  
+ACERRUBR 38                  
+POPUTREM 83                  
+QUERALBA 38                  
+QUERCOCC 48                  
+                   
+MapCode  113                  
+ACERRUBR 91                  
+QUERALBA 45                  
+QUERCOCC 98                  
+                   
+MapCode  114                  
+ACERRUBR 52                  
+FRAXAMER 66                  
+POPUTREM 52                  
+PRUNSERO 52                  
+QUERALBA 52                  
+QUERRUBR 85                  
+                   
+MapCode  115                  
+ACERRUBR 83                  
+PINUSTRO 69                  
+QUERALBA 83                  
+QUERCOCC 88                  
+                   
+MapCode  116                  
+QUERALBA 65                  
+QUERCOCC 55                  
+                   
+MapCode  119                  
+ACERRUBR 72                  
+PINUSTRO 72                  
+PRUNSERO 72                  
+QUERRUBR 56                  
+TSUGCANA 72                  
+                   
+MapCode  120                  
 ACERRUBR 66                  
-BETUALLE 66                  
-BETUPAPY 58                  
-FAGUGRAN 66                  
-FRAXAMER 45                  
-PRUNSERO 66                  
+BETUALLE 96                  
+PINUSTRO 94                  
+QUERALBA 96                  
 QUERRUBR 66                  
 TSUGCANA 66                  
                    
-MapCode  99                  
-ACERRUBR 74                  
-PINUSTRO 74                  
-PRUNSERO 73                  
-QUERALBA 74                  
-QUERRUBR 73                  
-                   
-MapCode  100                  
-ACERRUBR 40                  
-FRAXAMER 71                  
-QUERALBA 40                  
-QUERCOCC 90                  
-QUERRUBR 71                  
-                   
-MapCode  101                  
-ACERRUBR 50                  
-QUERALBA 79                  
-QUERCOCC 81                  
-QUERRUBR 79                  
-TSUGCANA 50                  
-                   
-MapCode  102                  
-ACERSACC 74                  
-PINUSTRO 74                  
-POPUTREM 69                  
-QUERRUBR 71                  
-                   
-MapCode  103                  
-QUERALBA 45                  
-QUERCOCC 30                  
-QUERRUBR 46                  
-                   
-MapCode  104                  
-ACERRUBR 43                  
-QUERALBA 87                  
-QUERCOCC 79                  
-QUERRUBR 43                  
-                   
-MapCode  105                  
-ACERRUBR 48                  
-PINUSTRO 67                  
-QUERALBA 43                  
-QUERRUBR 67                  
-TSUGCANA 48                  
-                   
-MapCode  106                  
-QUERALBA 38                  
-QUERCOCC 37                  
-QUERRUBR 35                  
-                   
-MapCode  107                  
-ACERRUBR 84                  
-BETUALLE 50                  
-PINUSTRO 59                  
-QUERALBA 59                  
-QUERCOCC 50                  
-TSUGCANA 84                  
-                   
-MapCode  108                  
-ACERRUBR 42                  
-BETUALLE 93                  
-PINUSTRO 93                  
-TSUGCANA 85                  
-                   
-MapCode  109                  
-ACERRUBR 81                  
-QUERALBA 54                  
-QUERCOCC 76                  
-QUERRUBR 76                  
-                   
-MapCode  110                  
-ACERRUBR 59                  
-QUERCOCC 81                  
-QUERRUBR 74                  
-                   
-MapCode  111                  
-ACERRUBR 65                  
-QUERALBA 94                  
-QUERCOCC 82                  
-QUERRUBR 82                  
-                   
-MapCode  112                  
-ACERRUBR 46                  
-POPUTREM 43                  
-QUERALBA 46                  
-QUERCOCC 38                  
-                   
-MapCode  113                  
-ACERRUBR 44                  
-QUERALBA 45                  
-QUERCOCC 85                  
-                   
-MapCode  114                  
-ACERRUBR 79                  
-FRAXAMER 79                  
-POPUTREM 38                  
-PRUNSERO 91                  
-QUERALBA 38                  
-QUERRUBR 79                  
-                   
-MapCode  115                  
-ACERRUBR 67                  
-PINUSTRO 95                  
-QUERALBA 84                  
-QUERCOCC 67                  
-                   
-MapCode  116                  
-QUERALBA 57                  
-QUERCOCC 52                  
-                   
-MapCode  119                  
-ACERRUBR 62                  
-PINUSTRO 62                  
-PRUNSERO 89                  
-QUERRUBR 62                  
-TSUGCANA 109                  
-                   
-MapCode  120                  
-ACERRUBR 82                  
-BETUALLE 72                  
-PINUSTRO 50                  
-QUERALBA 72                  
-QUERRUBR 82                  
-TSUGCANA 72                  
-                   
 MapCode  121                  
-ACERRUBR 97                  
-BETUPAPY 93                  
-QUERRUBR 57                  
+ACERRUBR 82                  
+BETUPAPY 110                  
+QUERRUBR 92                  
                    
 MapCode  122                  
-ACERRUBR 84                  
-ACERSACC 60                  
-BETUPAPY 84                  
-FRAXAMER 60                  
-POPUTREM 84                  
-PRUNSERO 78                  
-QUERRUBR 60                  
-                   
-MapCode  123                  
-ACERRUBR 71                  
-                   
-MapCode  124                  
-POPUTREM 67                  
-QUERALBA 50                  
-QUERRUBR 68                  
-                   
-MapCode  125                  
-ACERRUBR 44                  
-FAGUGRAN 53                  
-PINUSTRO 63                  
-QUERALBA 44                  
-QUERCOCC 63                  
-QUERRUBR 63                  
-                   
-MapCode  126                  
-ACERRUBR 74                  
-QUERRUBR 79                  
-                   
-MapCode  128                  
-ACERRUBR 71                  
-BETUPAPY 56                  
-POPUTREM 71                  
-PRUNSERO 63                  
-                   
-MapCode  129                  
-ACERRUBR 56                  
-FRAXAMER 63                  
-QUERALBA 92                  
-TSUGCANA 56                  
-                   
-MapCode  130                  
-ACERRUBR 64                  
-ACERSACC 67                  
-PINUSTRO 67                  
-QUERALBA 67                  
+ACERRUBR 63                  
+ACERSACC 40                  
+BETUPAPY 61                  
+FRAXAMER 40                  
+POPUTREM 63                  
+PRUNSERO 40                  
 QUERRUBR 61                  
                    
+MapCode  123                  
+ACERRUBR 35                  
+                   
+MapCode  124                  
+POPUTREM 85                  
+QUERALBA 75                  
+QUERRUBR 48                  
+                   
+MapCode  125                  
+ACERRUBR 102                  
+FAGUGRAN 58                  
+PINUSTRO 58                  
+QUERALBA 102                  
+QUERCOCC 58                  
+QUERRUBR 81                  
+                   
+MapCode  126                  
+ACERRUBR 95                  
+QUERRUBR 83                  
+                   
+MapCode  128                  
+ACERRUBR 60                  
+BETUPAPY 44                  
+POPUTREM 88                  
+PRUNSERO 60                  
+                   
+MapCode  129                  
+ACERRUBR 44                  
+FRAXAMER 44                  
+QUERALBA 77                  
+TSUGCANA 63                  
+                   
+MapCode  130                  
+ACERRUBR 72                  
+ACERSACC 116                  
+PINUSTRO 116                  
+QUERALBA 89                  
+QUERRUBR 89                  
+                   
 MapCode  131                  
-ACERRUBR 46                  
+ACERRUBR 3                  
                    
 MapCode  132                  
 ACERRUBR 92                  
-FRAXAMER 89                  
-PINUSTRO 89                  
-POPUTREM 102                  
-QUERRUBR 102                  
-TILIAMER 89                  
+FRAXAMER 93                  
+PINUSTRO 93                  
+POPUTREM 69                  
+QUERRUBR 93                  
+TILIAMER 69                  
                    
 MapCode  133                  
-ACERRUBR 56                  
-PINUSTRO 47                  
-QUERRUBR 41                  
-                   
-MapCode  134                  
-ACERRUBR 110                  
-ACERSACC 90                  
-BETULENT 70                  
-PINUSTRO 110                  
-QUERRUBR 70                  
-TSUGCANA 90                  
-                   
-MapCode  135                  
-ACERRUBR 62                  
-ACERSACC 62                  
-BETUALLE 88                  
-BETULENT 88                  
-PINURESI 86                  
-QUERRUBR 86                  
-                   
-MapCode  136                  
-ACERRUBR 77                  
-ACERSACC 104                  
-FRAXAMER 104                  
-PINUSTRO 77                  
-QUERALBA 107                  
-QUERRUBR 104                  
-                   
-MapCode  137                  
-ACERRUBR 96                  
-ACERSACC 96                  
-BETUPAPY 96                  
-FRAXAMER 51                  
-PINUSTRO 76                  
-QUERALBA 51                  
-QUERRUBR 76                  
-                   
-MapCode  138                  
-ACERRUBR 94                  
-BETUALLE 108                  
-BETUPAPY 94                  
-PINUSTRO 108                  
-QUERRUBR 110                  
-TSUGCANA 94                  
-                   
-MapCode  139                  
-ACERRUBR 80                  
-BETUALLE 80                  
-BETUPAPY 80                  
-FAGUGRAN 48                  
-PINUSTRO 80                  
-QUERALBA 64                  
-QUERRUBR 80                  
-                   
-MapCode  140                  
-ACERRUBR 88                  
-BETUALLE 88                  
-BETULENT 36                  
-FRAXAMER 36                  
-QUERRUBR 43                  
-                   
-MapCode  141                  
-ACERRUBR 110                  
-BETUALLE 76                  
-FAGUGRAN 76                  
-PINUSTRO 110                  
-PRUNSERO 76                  
-QUERALBA 111                  
-QUERRUBR 110                  
-TSUGCANA 111                  
-                   
-MapCode  142                  
-ACERRUBR 50                  
-ACERSACC 49                  
-FAGUGRAN 50                  
-PINUSTRO 100                  
-POPUGRAN 100                  
-QUERRUBR 100                  
-TSUGCANA 100                  
-                   
-MapCode  143                  
-ACERRUBR 76                  
-BETUALLE 70                  
-BETULENT 54                  
-BETUPAPY 76                  
-PINUSTRO 76                  
-PRUNSERO 76                  
-QUERALBA 70                  
-QUERRUBR 76                  
-                   
-MapCode  144                  
-ACERRUBR 68                  
-ACERSACC 110                  
-BETUALLE 96                  
-BETUPAPY 68                  
-QUERALBA 68                  
-TSUGCANA 68                  
-                   
-MapCode  145                  
-ACERRUBR 52                  
-BETUALLE 100                  
-FRAXAMER 104                  
-QUERALBA 52                  
-                   
-MapCode  146                  
-ACERRUBR 110                  
-ACERSACC 60                  
-FRAXAMER 110                  
-QUERRUBR 49                  
-                   
-MapCode  147                  
-ACERRUBR 56                  
-BETULENT 75                  
-POPUGRAN 56                  
-QUERALBA 75                  
-QUERCOCC 56                  
-QUERRUBR 75                  
-                   
-MapCode  148                  
-ACERRUBR 89                  
-BETULENT 105                  
+ACERRUBR 55                  
+PINUSTRO 81                  
 QUERRUBR 51                  
                    
-MapCode  149                  
-ACERRUBR 39                  
-BETUPAPY 41                  
-PRUNSERO 51                  
-                   
-MapCode  150                  
-ACERRUBR 113                  
-BETULENT 98                  
-FAGUGRAN 92                  
-FRAXAMER 92                  
-PRUNSERO 113                  
-QUERRUBR 92                  
-TSUGCANA 92                  
-                   
-MapCode  151                  
-ACERRUBR 93                  
-ACERSACC 112                  
-BETUALLE 75                  
-FAGUGRAN 112                  
-PINUSTRO 75                  
-POPUTREM 75                  
-PRUNSERO 93                  
-                   
-MapCode  152                  
-ACERRUBR 82                  
-ACERSACC 100                  
-BETUPAPY 72                  
-FAGUGRAN 100                  
-FRAXAMER 72                  
-PINUSTRO 72                  
-POPUTREM 100                  
-QUERRUBR 72                  
-                   
-MapCode  153                  
-ACERRUBR 60                  
-BETUALLE 113                  
-BETULENT 113                  
-PINUSTRO 60                  
-TSUGCANA 111                  
-                   
-MapCode  154                  
-ACERRUBR 83                  
-PINUSTRO 67                  
-QUERRUBR 83                  
-TSUGCANA 93                  
-                   
-MapCode  155                  
-ACERRUBR 72                  
-ACERSACC 49                  
-FAGUGRAN 73                  
-FRAXAMER 73                  
-PRUNSERO 73                  
-QUERRUBR 73                  
-TSUGCANA 73                  
-                   
-MapCode  156                  
-ACERRUBR 76                  
-BETUALLE 76                  
-BETUPAPY 103                  
-FAGUGRAN 103                  
-PINUSTRO 60                  
-QUERRUBR 60                  
-                   
-MapCode  157                  
-ACERRUBR 92                  
-BETUALLE 92                  
-FAGUGRAN 92                  
-PINUSTRO 112                  
-QUERRUBR 92                  
-TSUGCANA 99                  
-                   
-MapCode  158                  
-ACERRUBR 63                  
-QUERALBA 68                  
-QUERCOCC 90                  
-                   
-MapCode  159                  
-ACERRUBR 82                  
-ACERSACC 87                  
-FRAXAMER 65                  
-PINUSTRO 65                  
-POPUTREM 87                  
-PRUNSERO 87                  
-QUERALBA 65                  
-                   
-MapCode  160                  
-ACERRUBR 30                  
-BETUPAPY 75                  
-PINUSTRO 65                  
-                   
-MapCode  161                  
-BETUPAPY 50                  
-PINUSTRO 68                  
-PRUNSERO 52                  
-                   
-MapCode  162                  
-ACERRUBR 80                  
-ACERSACC 80                  
-PINUSTRO 75                  
-QUERALBA 75                  
-QUERCOCC 75                  
-QUERRUBR 80                  
-                   
-MapCode  163                  
-ACERRUBR 69                  
-BETUALLE 57                  
-PINUSTRO 66                  
-TSUGCANA 57                  
-                   
-MapCode  164                  
-ACERRUBR 60                  
-BETULENT 91                  
-BETUPAPY 102                  
-FRAXAMER 91                  
-QUERALBA 102                  
-QUERRUBR 60                  
-                   
-MapCode  165                  
-ACERRUBR 59                  
-BETUALLE 93                  
+MapCode  134                  
+ACERRUBR 58                  
+ACERSACC 111                  
 BETULENT 58                  
-BETUPAPY 58                  
-PINUSTRO 93                  
-QUERRUBR 58                  
+PINUSTRO 95                  
+QUERRUBR 111                  
 TSUGCANA 58                  
                    
-MapCode  166                  
-ACERRUBR 78                  
-BETULENT 78                  
-FRAXAMER 105                  
-PINUSTRO 105                  
-PRUNSERO 105                  
-QUERALBA 78                  
-QUERRUBR 78                  
-TSUGCANA 98                  
-                   
-MapCode  167                  
-ACERRUBR 57                  
-ACERSACC 98                  
-BETULENT 66                  
-QUERRUBR 98                  
-                   
-MapCode  168                  
-ACERRUBR 73                  
-BETULENT 86                  
-FAGUGRAN 73                  
-PINUSTRO 86                  
-QUERALBA 48                  
-QUERRUBR 86                  
-                   
-MapCode  169                  
-ACERRUBR 102                  
-ACERSACC 73                  
-BETULENT 73                  
-BETUPAPY 73                  
-PINUSTRO 73                  
-QUERALBA 95                  
-                   
-MapCode  170                  
-ACERRUBR 49                  
-BETULENT 92                  
-PINUSTRO 92                  
-QUERCOCC 62                  
-QUERRUBR 92                  
-                   
-MapCode  171                  
-ACERRUBR 107                  
-BETUALLE 59                  
-BETULENT 59                  
-PINUSTRO 107                  
-QUERALBA 66                  
-QUERRUBR 59                  
-TSUGCANA 66                  
-                   
-MapCode  172                  
-ACERRUBR 78                  
-BETULENT 59                  
-PRUNSERO 92                  
-QUERALBA 78                  
-QUERRUBR 59                  
-                   
-MapCode  173                  
-ACERRUBR 56                  
-BETULENT 40                  
-FAGUGRAN 56                  
-PINUSTRO 56                  
-QUERRUBR 56                  
-TSUGCANA 37                  
-                   
-MapCode  174                  
-ACERRUBR 74                  
-ACERSACC 95                  
-BETULENT 74                  
-FRAXAMER 74                  
-QUERRUBR 79                  
-TSUGCANA 95                  
-                   
-MapCode  175                  
-ACERRUBR 84                  
-BETULENT 49                  
-BETUPAPY 84                  
-FAGUGRAN 49                  
-PINUSTRO 68                  
-QUERRUBR 49                  
-TSUGCANA 68                  
-                   
-MapCode  176                  
-ACERRUBR 53                  
-ACERSACC 61                  
-BETUALLE 84                  
-BETUPAPY 61                  
-FAGUGRAN 61                  
-QUERRUBR 61                  
-                   
-MapCode  177                  
-ACERRUBR 62                  
-ACERSACC 76                  
-BETUALLE 76                  
-BETULENT 93                  
-BETUPAPY 93                  
-FAGUGRAN 76                  
-QUERRUBR 62                  
-TSUGCANA 93                  
-                   
-MapCode  178                  
-ACERRUBR 73                  
-ACERSACC 84                  
-BETUPAPY 84                  
-FAGUGRAN 84                  
-FRAXAMER 84                  
-PINUSTRO 73                  
-POPUGRAN 84                  
+MapCode  135                  
+ACERRUBR 108                  
+ACERSACC 65                  
+BETUALLE 108                  
+BETULENT 108                  
+PINURESI 73                  
 QUERRUBR 73                  
                    
-MapCode  179                  
-ACERRUBR 52                  
-BETUPAPY 49                  
-FAGUGRAN 52                  
-PINUSTRO 52                  
-TSUGCANA 48                  
-                   
-MapCode  180                  
-ACERRUBR 60                  
-ACERSACC 86                  
-BETUALLE 115                  
-BETULENT 60                  
-BETUPAPY 115                  
-FAGUGRAN 86                  
-QUERRUBR 60                  
-TSUGCANA 86                  
-                   
-MapCode  181                  
-ACERRUBR 88                  
-BETULENT 72                  
-BETUPAPY 88                  
-FAGUGRAN 72                  
-QUERRUBR 117                  
-TSUGCANA 72                  
-                   
-MapCode  182                  
-ACERRUBR 76                  
-BETUALLE 99                  
-BETUPAPY 76                  
-FAGUGRAN 99                  
-PINUSTRO 123                  
-QUERRUBR 99                  
-TSUGCANA 123                  
-                   
-MapCode  183                  
-ACERRUBR 46                  
-BETUALLE 39                  
+MapCode  136                  
+ACERRUBR 55                  
+ACERSACC 66                  
+FRAXAMER 66                  
 PINUSTRO 66                  
+QUERALBA 66                  
+QUERRUBR 59                  
                    
-MapCode  184                  
-ACERRUBR 74                  
-BETULENT 54                  
-BETUPAPY 44                  
-POPUTREM 74                  
-QUERALBA 74                  
-QUERRUBR 54                  
-TSUGCANA 74                  
+MapCode  137                  
+ACERRUBR 65                  
+ACERSACC 78                  
+BETUPAPY 59                  
+FRAXAMER 65                  
+PINUSTRO 78                  
+QUERALBA 78                  
+QUERRUBR 78                  
                    
-MapCode  185                  
-PINUSTRO 88                  
-POPUGRAN 66                  
-POPUTREM 31                  
-                   
-MapCode  186                  
-ACERRUBR 79                  
-ACERSACC 100                  
-BETULENT 82                  
-FAGUGRAN 100                  
-FRAXAMER 79                  
-PINUSTRO 79                  
-PRUNSERO 82                  
-TSUGCANA 79                  
-                   
-MapCode  187                  
-ACERRUBR 47                  
-BETULENT 65                  
-PINUSTRO 67                  
-QUERALBA 67                  
-QUERCOCC 65                  
-QUERRUBR 47                  
-TSUGCANA 67                  
-                   
-MapCode  188                  
-ACERRUBR 69                  
-BETULENT 113                  
-PINUSTRO 69                  
-QUERALBA 69                  
-QUERRUBR 65                  
-                   
-MapCode  189                  
-ACERRUBR 75                  
-PINUSTRO 116                  
-PRUNSERO 75                  
-QUERALBA 75                  
-QUERRUBR 112                  
-TSUGCANA 75                  
-                   
-MapCode  190                  
-ACERRUBR 73                  
-ACERSACC 75                  
-BETULENT 67                  
-FRAXAMER 67                  
-QUERALBA 67                  
-QUERRUBR 75                  
-TILIAMER 75                  
-                   
-MapCode  191                  
-ACERRUBR 114                  
-BETULENT 56                  
-PRUNSERO 86                  
-QUERALBA 114                  
-QUERRUBR 86                  
+MapCode  138                  
+ACERRUBR 107                  
+BETUALLE 114                  
+BETUPAPY 73                  
+PINUSTRO 73                  
+QUERRUBR 73                  
 TSUGCANA 114                  
                    
-MapCode  192                  
-ACERRUBR 1                  
-BETUPAPY 6                  
+MapCode  139                  
+ACERRUBR 49                  
+BETUALLE 54                  
+BETUPAPY 101                  
+FAGUGRAN 101                  
+PINUSTRO 54                  
+QUERALBA 101                  
+QUERRUBR 54                  
                    
-MapCode  193                  
-ACERRUBR 80                  
-BETULENT 80                  
-BETUPAPY 46                  
+MapCode  140                  
+ACERRUBR 53                  
+BETUALLE 53                  
+BETULENT 94                  
+FRAXAMER 94                  
+QUERRUBR 54                  
+                   
+MapCode  141                  
+ACERRUBR 117                  
+BETUALLE 80                  
+FAGUGRAN 89                  
 PINUSTRO 80                  
-QUERRUBR 96                  
+PRUNSERO 89                  
+QUERALBA 117                  
+QUERRUBR 89                  
+TSUGCANA 89                  
                    
-MapCode  194                  
-ACERRUBR 71                  
-BETUALLE 84                  
+MapCode  142                  
+ACERRUBR 72                  
+ACERSACC 87                  
+FAGUGRAN 87                  
+PINUSTRO 72                  
+POPUGRAN 76                  
+QUERRUBR 72                  
+TSUGCANA 87                  
                    
-MapCode  195                  
-ACERRUBR 60                  
-BETUALLE 60                  
-PINUSTRO 106                  
-PRUNSERO 60                  
-QUERRUBR 70                  
-TSUGCANA 106                  
+MapCode  143                  
+ACERRUBR 66                  
+BETUALLE 66                  
+BETULENT 88                  
+BETUPAPY 88                  
+PINUSTRO 88                  
+PRUNSERO 106                  
+QUERALBA 66                  
+QUERRUBR 66                  
                    
-MapCode  196                  
+MapCode  144                  
 ACERRUBR 74                  
-BETUALLE 125                  
-BETULENT 81                  
-PINUSTRO 125                  
-QUERRUBR 125                  
-TSUGCANA 81                  
+ACERSACC 77                  
+BETUALLE 68                  
+BETUPAPY 77                  
+QUERALBA 74                  
+TSUGCANA 77                  
                    
-MapCode  197                  
-ACERRUBR 57                  
-BETUALLE 87                  
-BETULENT 80                  
-FRAXAMER 87                  
-PINUSTRO 57                  
+MapCode  145                  
+ACERRUBR 74                  
+BETUALLE 105                  
+FRAXAMER 108                  
+QUERALBA 74                  
                    
-MapCode  198                  
-ACERRUBR 56                  
-FAGUGRAN 70                  
-PRUNSERO 85                  
-QUERCOCC 70                  
-QUERRUBR 56                  
-                   
-MapCode  199                  
-ACERRUBR 59                  
-BETULENT 59                  
-PINUSTRO 59                  
-QUERCOCC 100                  
-QUERRUBR 108                  
-TSUGCANA 59                  
-                   
-MapCode  200                  
-ACERRUBR 75                  
-BETULENT 33                  
-PINUSTRO 79                  
-QUERALBA 75                  
-QUERRUBR 79                  
-                   
-MapCode  201                  
-ACERRUBR 43                  
-BETULENT 100                  
-BETUPAPY 81                  
-QUERRUBR 100                  
-                   
-MapCode  202                  
-ACERRUBR 104                  
-BETULENT 89                  
-QUERALBA 76                  
-QUERCOCC 89                  
+MapCode  146                  
+ACERRUBR 67                  
+ACERSACC 67                  
+FRAXAMER 81                  
 QUERRUBR 76                  
                    
-MapCode  203                  
+MapCode  147                  
 ACERRUBR 83                  
-BETULENT 55                  
-PINUSTRO 75                  
+BETULENT 48                  
+POPUGRAN 83                  
 QUERALBA 83                  
-QUERCOCC 75                  
-QUERRUBR 55                  
+QUERCOCC 103                  
+QUERRUBR 48                  
                    
-MapCode  204                  
-ACERRUBR 111                  
-BETULENT 108                  
-PINUSTRO 75                  
-QUERRUBR 75                  
+MapCode  148                  
+ACERRUBR 63                  
+BETULENT 90                  
+QUERRUBR 53                  
                    
-MapCode  205                  
-ACERRUBR 64                  
-ACERSACC 50                  
-BETUALLE 64                  
-BETUPAPY 64                  
-FRAXAMER 64                  
-PINUSTRO 64                  
-QUERRUBR 52                  
+MapCode  149                  
+ACERRUBR 81                  
+BETUPAPY 39                  
+PRUNSERO 83                  
                    
-MapCode  206                  
-ACERRUBR 46                  
-PINUSTRO 97                  
-QUERALBA 64                  
-                   
-MapCode  207                  
-ACERRUBR 110                  
-BETULENT 106                  
-PINUSTRO 104                  
-QUERALBA 110                  
+MapCode  150                  
+ACERRUBR 109                  
+BETULENT 109                  
+FAGUGRAN 56                  
+FRAXAMER 109                  
+PRUNSERO 56                  
 QUERRUBR 104                  
 TSUGCANA 104                  
                    
-MapCode  208                  
-ACERRUBR 77                  
-BETUALLE 106                  
-BETULENT 77                  
-FAGUGRAN 81                  
-PRUNSERO 106                  
-QUERRUBR 106                  
+MapCode  151                  
+ACERRUBR 75                  
+ACERSACC 75                  
+BETUALLE 52                  
+FAGUGRAN 75                  
+PINUSTRO 75                  
+POPUTREM 75                  
+PRUNSERO 65                  
+                   
+MapCode  152                  
+ACERRUBR 101                  
+ACERSACC 101                  
+BETUPAPY 69                  
+FAGUGRAN 58                  
+FRAXAMER 101                  
+PINUSTRO 58                  
+POPUTREM 69                  
+QUERRUBR 69                  
+                   
+MapCode  153                  
+ACERRUBR 93                  
+BETUALLE 116                  
+BETULENT 81                  
+PINUSTRO 93                  
 TSUGCANA 81                  
                    
-MapCode  209                  
-ACERRUBR 93                  
-ACERSACC 109                  
-BETUALLE 93                  
-FAGUGRAN 67                  
-FRAXAMER 67                  
-PRUNSERO 67                  
-QUERRUBR 93                  
+MapCode  154                  
+ACERRUBR 85                  
+PINUSTRO 76                  
+QUERRUBR 76                  
+TSUGCANA 62                  
                    
-MapCode  210                  
-ACERRUBR 75                  
-BETUALLE 75                  
-BETUPAPY 92                  
-FRAXAMER 92                  
-PINUSTRO 75                  
-PRUNSERO 92                  
-TSUGCANA 75                  
-                   
-MapCode  211                  
-ACERRUBR 113                  
-BETUALLE 85                  
-PINUSTRO 92                  
-QUERRUBR 92                  
-                   
-MapCode  212                  
-ACERRUBR 113                  
-PINUSTRO 67                  
-PRUNSERO 104                  
-                   
-MapCode  213                  
-ACERRUBR 91                  
-BETUPAPY 96                  
-FAGUGRAN 54                  
-PINUSTRO 91                  
-PRUNSERO 54                  
-QUERRUBR 54                  
-                   
-MapCode  214                  
-ACERRUBR 63                  
-BETUALLE 74                  
-BETULENT 88                  
-FAGUGRAN 74                  
-QUERRUBR 63                  
-TSUGCANA 88                  
-                   
-MapCode  215                  
-ACERRUBR 116                  
-ACERSACC 106                  
-BETULENT 102                  
-PINUSTRO 102                  
-QUERRUBR 102                  
-TSUGCANA 102                  
-                   
-MapCode  216                  
-ACERRUBR 67                  
-PINUSTRO 91                  
-PRUNSERO 108                  
-QUERRUBR 91                  
-TSUGCANA 67                  
-                   
-MapCode  217                  
-ACERRUBR 58                  
-FAGUGRAN 74                  
-PINUSTRO 58                  
-QUERRUBR 112                  
-TSUGCANA 112                  
-                   
-MapCode  218                  
-ACERRUBR 48                  
-BETUALLE 48                  
-BETUPAPY 105                  
-FAGUGRAN 107                  
-PINUSTRO 48                  
-QUERRUBR 48                  
-                   
-MapCode  219                  
-ACERRUBR 104                  
-FAGUGRAN 54                  
-PINUSTRO 104                  
-PRUNSERO 51                  
-                   
-MapCode  220                  
-ACERRUBR 79                  
-PINUSTRO 61                  
-PRUNSERO 79                  
-QUERALBA 57                  
-QUERRUBR 79                  
-TSUGCANA 61                  
-                   
-MapCode  221                  
-ACERRUBR 112                  
-BETUALLE 83                  
-BETUPAPY 101                  
-PINUSTRO 83                  
-QUERRUBR 83                  
-TSUGCANA 83                  
-                   
-MapCode  222                  
-ACERRUBR 94                  
-BETUALLE 94                  
-BETULENT 96                  
-PINUSTRO 110                  
-                   
-MapCode  223                  
-ACERRUBR 73                  
-BETULENT 66                  
-BETUPAPY 95                  
-FAGUGRAN 66                  
-PINUSTRO 95                  
-QUERALBA 95                  
-QUERRUBR 66                  
-TSUGCANA 95                  
-                   
-MapCode  224                  
-ACERRUBR 83                  
-BETUALLE 72                  
-BETULENT 72                  
-PINUSTRO 115                  
-PRUNSERO 115                  
-QUERRUBR 72                  
-                   
-MapCode  225                  
-ACERRUBR 93                  
-BETUALLE 62                  
-FRAXAMER 53                  
-QUERALBA 93                  
-QUERCOCC 62                  
-QUERRUBR 62                  
-                   
-MapCode  226                  
-ACERRUBR 102                  
-BETULENT 91                  
-FAGUGRAN 61                  
-PINUSTRO 91                  
-QUERCOCC 61                  
-QUERRUBR 61                  
-                   
-MapCode  227                  
-ACERRUBR 67                  
-ACERSACC 79                  
-FAGUGRAN 67                  
-PINUSTRO 79                  
-QUERRUBR 107                  
+MapCode  155                  
+ACERRUBR 81                  
+ACERSACC 70                  
+FAGUGRAN 70                  
+FRAXAMER 81                  
+PRUNSERO 70                  
+QUERRUBR 81                  
 TSUGCANA 79                  
                    
-MapCode  228                  
-ACERRUBR 71                  
-ACERSACC 60                  
-BETULENT 112                  
-BETUPAPY 71                  
-FAGUGRAN 112                  
-PINUSTRO 112                  
-PRUNSERO 112                  
-TSUGCANA 112                  
-                   
-MapCode  229                  
-ACERRUBR 116                  
-BETUALLE 62                  
-BETULENT 76                  
-FAGUGRAN 116                  
-FRAXAMER 62                  
-PRUNSERO 116                  
-QUERRUBR 62                  
-TSUGCANA 116                  
-                   
-MapCode  230                  
-ACERRUBR 86                  
-ACERSACC 86                  
-BETUALLE 79                  
+MapCode  156                  
+ACERRUBR 73                  
+BETUALLE 72                  
+BETUPAPY 73                  
 FAGUGRAN 72                  
-FRAXAMER 79                  
-QUERRUBR 86                  
-TSUGCANA 86                  
+PINUSTRO 105                  
+QUERRUBR 73                  
                    
-MapCode  231                  
-ACERRUBR 109                  
-ACERSACC 109                  
-FAGUGRAN 110                  
-FRAXAMER 100                  
-PINUSTRO 110                  
-PRUNSERO 100                  
-QUERRUBR 110                  
+MapCode  157                  
+ACERRUBR 72                  
+BETUALLE 72                  
+FAGUGRAN 72                  
+PINUSTRO 95                  
+QUERRUBR 114                  
+TSUGCANA 95                  
                    
-MapCode  232                  
-ACERRUBR 112                  
-ACERSACC 55                  
-FAGUGRAN 55                  
-FRAXAMER 112                  
-PINUSTRO 50                  
-QUERRUBR 112                  
-TILIAMER 112                  
+MapCode  158                  
+ACERRUBR 65                  
+QUERALBA 99                  
+QUERCOCC 91                  
                    
-MapCode  233                  
-ACERRUBR 69                  
-ACERSACC 93                  
-BETULENT 44                  
-CARYCORD 44                  
-FAGUGRAN 69                  
-FRAXAMER 44                  
-PINUSTRO 44                  
-                   
-MapCode  234                  
-ACERRUBR 50                  
-BETULENT 83                  
-BETUPAPY 83                  
-FRAXAMER 83                  
-PINUSTRO 50                  
-POPUTREM 76                  
-TSUGCANA 76                  
-                   
-MapCode  235                  
-ACERRUBR 71                  
-BETULENT 71                  
-PINUSTRO 71                  
-QUERALBA 103                  
-QUERCOCC 71                  
-QUERRUBR 76                  
-                   
-MapCode  236                  
-ACERRUBR 59                  
-BETULENT 59                  
-PINUSTRO 92                  
-QUERALBA 59                  
-QUERRUBR 44                  
-TSUGCANA 59                  
-                   
-MapCode  237                  
-ACERRUBR 106                  
-PINUSTRO 66                  
-PRUNSERO 62                  
-QUERCOCC 66                  
-QUERRUBR 62                  
-                   
-MapCode  238                  
-ACERRUBR 64                  
-BETUALLE 64                  
-BETULENT 64                  
-FAGUGRAN 64                  
-PINUSTRO 92                  
-PRUNSERO 83                  
-QUERRUBR 64                  
-                   
-MapCode  239                  
-ACERRUBR 98                  
-ACERSACC 46                  
-BETUALLE 98                  
-BETULENT 46                  
-FRAXAMER 89                  
-QUERALBA 89                  
-QUERRUBR 46                  
-TSUGCANA 89                  
-                   
-MapCode  240                  
-ACERSACC 90                  
-FRAXAMER 64                  
-QUERRUBR 52                  
-                   
-MapCode  241                  
-ACERRUBR 79                  
-PINUSTRO 96                  
-QUERALBA 51                  
-QUERRUBR 79                  
-                   
-MapCode  242                  
-ACERRUBR 84                  
+MapCode  159                  
+ACERRUBR 65                  
+ACERSACC 65                  
+FRAXAMER 97                  
+PINUSTRO 84                  
+POPUTREM 84                  
+PRUNSERO 97                  
 QUERALBA 84                  
-QUERCOCC 89                  
-QUERRUBR 86                  
                    
-MapCode  243                  
-ACERSACC 50                  
-BETUALLE 99                  
-FAGUGRAN 48                  
-FRAXAMER 50                  
-QUERRUBR 48                  
+MapCode  160                  
+ACERRUBR 71                  
+BETUPAPY 62                  
+PINUSTRO 80                  
                    
-MapCode  244                  
-ACERRUBR 81                  
-BETUALLE 81                  
+MapCode  161                  
+BETUPAPY 46                  
+PINUSTRO 61                  
+PRUNSERO 36                  
+                   
+MapCode  162                  
+ACERRUBR 66                  
+ACERSACC 58                  
+PINUSTRO 66                  
+QUERALBA 49                  
+QUERCOCC 58                  
+QUERRUBR 66                  
+                   
+MapCode  163                  
+ACERRUBR 85                  
+BETUALLE 85                  
+PINUSTRO 90                  
+TSUGCANA 93                  
+                   
+MapCode  164                  
+ACERRUBR 74                  
+BETULENT 74                  
+BETUPAPY 74                  
+FRAXAMER 63                  
+QUERALBA 74                  
+QUERRUBR 61                  
+                   
+MapCode  165                  
+ACERRUBR 56                  
+BETUALLE 68                  
+BETULENT 70                  
+BETUPAPY 70                  
+PINUSTRO 56                  
+QUERRUBR 56                  
+TSUGCANA 70                  
+                   
+MapCode  166                  
+ACERRUBR 100                  
 BETULENT 57                  
-FAGUGRAN 100                  
-FRAXAMER 100                  
+FRAXAMER 57                  
+PINUSTRO 57                  
 PRUNSERO 57                  
+QUERALBA 100                  
+QUERRUBR 57                  
 TSUGCANA 57                  
                    
-MapCode  245                  
-ACERRUBR 70                  
-PINUSTRO 82                  
-TSUGCANA 66                  
+MapCode  167                  
+ACERRUBR 72                  
+ACERSACC 84                  
+BETULENT 84                  
+QUERRUBR 58                  
                    
-MapCode  246                  
+MapCode  168                  
+ACERRUBR 72                  
+BETULENT 70                  
+FAGUGRAN 72                  
+PINUSTRO 70                  
+QUERALBA 72                  
+QUERRUBR 72                  
+                   
+MapCode  169                  
+ACERRUBR 47                  
+ACERSACC 59                  
+BETULENT 59                  
+BETUPAPY 47                  
+PINUSTRO 59                  
+QUERALBA 44                  
+                   
+MapCode  170                  
+ACERRUBR 87                  
+BETULENT 78                  
+PINUSTRO 81                  
+QUERCOCC 87                  
+QUERRUBR 78                  
+                   
+MapCode  171                  
+ACERRUBR 105                  
+BETUALLE 80                  
+BETULENT 80                  
+PINUSTRO 105                  
+QUERALBA 105                  
+QUERRUBR 105                  
+TSUGCANA 75                  
+                   
+MapCode  172                  
+ACERRUBR 83                  
+BETULENT 93                  
+PRUNSERO 93                  
+QUERALBA 100                  
+QUERRUBR 83                  
+                   
+MapCode  173                  
+ACERRUBR 32                  
+BETULENT 32                  
+FAGUGRAN 32                  
+PINUSTRO 89                  
+QUERRUBR 32                  
+TSUGCANA 82                  
+                   
+MapCode  174                  
+ACERRUBR 50                  
+ACERSACC 101                  
+BETULENT 50                  
+FRAXAMER 93                  
+QUERRUBR 50                  
+TSUGCANA 93                  
+                   
+MapCode  175                  
+ACERRUBR 82                  
+BETULENT 70                  
+BETUPAPY 82                  
+FAGUGRAN 70                  
+PINUSTRO 70                  
+QUERRUBR 98                  
+TSUGCANA 82                  
+                   
+MapCode  176                  
+ACERRUBR 42                  
+ACERSACC 70                  
+BETUALLE 72                  
+BETUPAPY 42                  
+FAGUGRAN 72                  
+QUERRUBR 72                  
+                   
+MapCode  177                  
+ACERRUBR 87                  
+ACERSACC 102                  
+BETUALLE 87                  
+BETULENT 102                  
+BETUPAPY 87                  
+FAGUGRAN 61                  
+QUERRUBR 87                  
+TSUGCANA 102                  
+                   
+MapCode  178                  
+ACERRUBR 62                  
+ACERSACC 81                  
+BETUPAPY 81                  
+FAGUGRAN 62                  
+FRAXAMER 81                  
+PINUSTRO 105                  
+POPUGRAN 105                  
+QUERRUBR 81                  
+                   
+MapCode  179                  
 ACERRUBR 103                  
-BETULENT 85                  
-FAGUGRAN 103                  
-PINUSTRO 85                  
-QUERRUBR 85                  
+BETUPAPY 103                  
+FAGUGRAN 82                  
+PINUSTRO 82                  
+TSUGCANA 82                  
+                   
+MapCode  180                  
+ACERRUBR 86                  
+ACERSACC 74                  
+BETUALLE 84                  
+BETULENT 86                  
+BETUPAPY 86                  
+FAGUGRAN 84                  
+QUERRUBR 74                  
+TSUGCANA 86                  
+                   
+MapCode  181                  
+ACERRUBR 101                  
+BETULENT 99                  
+BETUPAPY 112                  
+FAGUGRAN 101                  
+QUERRUBR 112                  
+TSUGCANA 101                  
+                   
+MapCode  182                  
+ACERRUBR 96                  
+BETUALLE 96                  
+BETUPAPY 96                  
+FAGUGRAN 113                  
+PINUSTRO 120                  
+QUERRUBR 96                  
+TSUGCANA 96                  
+                   
+MapCode  183                  
+ACERRUBR 46                  
+BETUALLE 33                  
+PINUSTRO 67                  
+                   
+MapCode  184                  
+ACERRUBR 61                  
+BETULENT 86                  
+BETUPAPY 86                  
+POPUTREM 86                  
+QUERALBA 51                  
+QUERRUBR 86                  
+TSUGCANA 61                  
+                   
+MapCode  185                  
+PINUSTRO 41                  
+POPUGRAN 77                  
+POPUTREM 30                  
+                   
+MapCode  186                  
+ACERRUBR 77                  
+ACERSACC 48                  
+BETULENT 77                  
+FAGUGRAN 77                  
+FRAXAMER 48                  
+PINUSTRO 48                  
+PRUNSERO 77                  
+TSUGCANA 92                  
+                   
+MapCode  187                  
+ACERRUBR 60                  
+BETULENT 60                  
+PINUSTRO 96                  
+QUERALBA 63                  
+QUERCOCC 96                  
+QUERRUBR 96                  
+TSUGCANA 63                  
+                   
+MapCode  188                  
+ACERRUBR 87                  
+BETULENT 91                  
+PINUSTRO 91                  
+QUERALBA 66                  
+QUERRUBR 66                  
+                   
+MapCode  189                  
+ACERRUBR 81                  
+PINUSTRO 93                  
+PRUNSERO 72                  
+QUERALBA 72                  
+QUERRUBR 93                  
+TSUGCANA 72                  
+                   
+MapCode  190                  
+ACERRUBR 92                  
+ACERSACC 72                  
+BETULENT 68                  
+FRAXAMER 68                  
+QUERALBA 92                  
+QUERRUBR 72                  
+TILIAMER 92                  
+                   
+MapCode  191                  
+ACERRUBR 56                  
+BETULENT 83                  
+PRUNSERO 83                  
+QUERALBA 74                  
+QUERRUBR 83                  
+TSUGCANA 56                  
+                   
+MapCode  192                  
+ACERRUBR 12                  
+BETUPAPY 38                  
+                   
+MapCode  193                  
+ACERRUBR 59                  
+BETULENT 96                  
+BETUPAPY 82                  
+PINUSTRO 82                  
+QUERRUBR 59                  
+                   
+MapCode  194                  
+ACERRUBR 61                  
+BETUALLE 95                  
+                   
+MapCode  195                  
+ACERRUBR 79                  
+BETUALLE 106                  
+PINUSTRO 79                  
+PRUNSERO 79                  
+QUERRUBR 79                  
+TSUGCANA 79                  
+                   
+MapCode  196                  
+ACERRUBR 93                  
+BETUALLE 94                  
+BETULENT 93                  
+PINUSTRO 100                  
+QUERRUBR 100                  
+TSUGCANA 93                  
+                   
+MapCode  197                  
+ACERRUBR 59                  
+BETUALLE 72                  
+BETULENT 72                  
+FRAXAMER 46                  
+PINUSTRO 46                  
+                   
+MapCode  198                  
+ACERRUBR 90                  
+FAGUGRAN 90                  
+PRUNSERO 110                  
+QUERCOCC 90                  
+QUERRUBR 114                  
+                   
+MapCode  199                  
+ACERRUBR 72                  
+BETULENT 63                  
+PINUSTRO 109                  
+QUERCOCC 63                  
+QUERRUBR 109                  
+TSUGCANA 72                  
+                   
+MapCode  200                  
+ACERRUBR 62                  
+BETULENT 42                  
+PINUSTRO 62                  
+QUERALBA 41                  
+QUERRUBR 41                  
+                   
+MapCode  201                  
+ACERRUBR 96                  
+BETULENT 42                  
+BETUPAPY 61                  
+QUERRUBR 61                  
+                   
+MapCode  202                  
+ACERRUBR 58                  
+BETULENT 97                  
+QUERALBA 58                  
+QUERCOCC 83                  
+QUERRUBR 97                  
+                   
+MapCode  203                  
+ACERRUBR 78                  
+BETULENT 78                  
+PINUSTRO 78                  
+QUERALBA 51                  
+QUERCOCC 101                  
+QUERRUBR 78                  
+                   
+MapCode  204                  
+ACERRUBR 86                  
+BETULENT 107                  
+PINUSTRO 86                  
+QUERRUBR 89                  
+                   
+MapCode  205                  
+ACERRUBR 55                  
+ACERSACC 92                  
+BETUALLE 92                  
+BETUPAPY 92                  
+FRAXAMER 74                  
+PINUSTRO 55                  
+QUERRUBR 92                  
+                   
+MapCode  206                  
+ACERRUBR 69                  
+PINUSTRO 54                  
+QUERALBA 71                  
+                   
+MapCode  207                  
+ACERRUBR 77                  
+BETULENT 113                  
+PINUSTRO 77                  
+QUERALBA 77                  
+QUERRUBR 77                  
+TSUGCANA 108                  
+                   
+MapCode  208                  
+ACERRUBR 90                  
+BETUALLE 90                  
+BETULENT 102                  
+FAGUGRAN 90                  
+PRUNSERO 100                  
+QUERRUBR 102                  
+TSUGCANA 100                  
+                   
+MapCode  209                  
+ACERRUBR 88                  
+ACERSACC 72                  
+BETUALLE 72                  
+FAGUGRAN 72                  
+FRAXAMER 113                  
+PRUNSERO 113                  
+QUERRUBR 72                  
+                   
+MapCode  210                  
+ACERRUBR 64                  
+BETUALLE 71                  
+BETUPAPY 64                  
+FRAXAMER 100                  
+PINUSTRO 100                  
+PRUNSERO 64                  
+TSUGCANA 71                  
+                   
+MapCode  211                  
+ACERRUBR 57                  
+BETUALLE 90                  
+PINUSTRO 99                  
+QUERRUBR 90                  
+                   
+MapCode  212                  
+ACERRUBR 87                  
+PINUSTRO 115                  
+PRUNSERO 71                  
+                   
+MapCode  213                  
+ACERRUBR 89                  
+BETUPAPY 57                  
+FAGUGRAN 89                  
+PINUSTRO 89                  
+PRUNSERO 89                  
+QUERRUBR 66                  
+                   
+MapCode  214                  
+ACERRUBR 33                  
+BETUALLE 33                  
+BETULENT 72                  
+FAGUGRAN 72                  
+QUERRUBR 72                  
 TSUGCANA 94                  
                    
-MapCode  247                  
+MapCode  215                  
+ACERRUBR 99                  
+ACERSACC 99                  
+BETULENT 99                  
+PINUSTRO 71                  
+QUERRUBR 75                  
+TSUGCANA 75                  
+                   
+MapCode  216                  
+ACERRUBR 91                  
+PINUSTRO 91                  
+PRUNSERO 91                  
+QUERRUBR 51                  
+TSUGCANA 91                  
+                   
+MapCode  217                  
+ACERRUBR 69                  
+FAGUGRAN 97                  
+PINUSTRO 69                  
+QUERRUBR 69                  
+TSUGCANA 91                  
+                   
+MapCode  218                  
+ACERRUBR 56                  
+BETUALLE 70                  
+BETUPAPY 56                  
+FAGUGRAN 97                  
+PINUSTRO 97                  
+QUERRUBR 97                  
+                   
+MapCode  219                  
+ACERRUBR 90                  
+FAGUGRAN 82                  
+PINUSTRO 97                  
+PRUNSERO 82                  
+                   
+MapCode  220                  
+ACERRUBR 55                  
+PINUSTRO 116                  
+PRUNSERO 55                  
+QUERALBA 116                  
+QUERRUBR 97                  
+TSUGCANA 97                  
+                   
+MapCode  221                  
+ACERRUBR 102                  
+BETUALLE 102                  
+BETUPAPY 64                  
+PINUSTRO 61                  
+QUERRUBR 61                  
+TSUGCANA 64                  
+                   
+MapCode  222                  
+ACERRUBR 106                  
+BETUALLE 78                  
+BETULENT 85                  
+PINUSTRO 106                  
+                   
+MapCode  223                  
+ACERRUBR 92                  
+BETULENT 116                  
+BETUPAPY 116                  
+FAGUGRAN 92                  
+PINUSTRO 89                  
+QUERALBA 89                  
+QUERRUBR 116                  
+TSUGCANA 116                  
+                   
+MapCode  224                  
+ACERRUBR 119                  
+BETUALLE 113                  
+BETULENT 113                  
+PINUSTRO 80                  
+PRUNSERO 113                  
+QUERRUBR 80                  
+                   
+MapCode  225                  
 ACERRUBR 87                  
-ACERSACC 67                  
-BETULENT 87                  
-FAGUGRAN 67                  
-PINUSTRO 87                  
-QUERRUBR 87                  
-TSUGCANA 74                  
+BETUALLE 87                  
+FRAXAMER 83                  
+QUERALBA 71                  
+QUERCOCC 87                  
+QUERRUBR 71                  
+                   
+MapCode  226                  
+ACERRUBR 76                  
+BETULENT 89                  
+FAGUGRAN 76                  
+PINUSTRO 58                  
+QUERCOCC 89                  
+QUERRUBR 89                  
+                   
+MapCode  227                  
+ACERRUBR 72                  
+ACERSACC 96                  
+FAGUGRAN 72                  
+PINUSTRO 96                  
+QUERRUBR 97                  
+TSUGCANA 96                  
+                   
+MapCode  228                  
+ACERRUBR 91                  
+ACERSACC 97                  
+BETULENT 97                  
+BETUPAPY 77                  
+FAGUGRAN 77                  
+PINUSTRO 97                  
+PRUNSERO 97                  
+TSUGCANA 97                  
+                   
+MapCode  229                  
+ACERRUBR 104                  
+BETUALLE 104                  
+BETULENT 68                  
+FAGUGRAN 104                  
+FRAXAMER 97                  
+PRUNSERO 104                  
+QUERRUBR 97                  
+TSUGCANA 97                  
+                   
+MapCode  230                  
+ACERRUBR 92                  
+ACERSACC 95                  
+BETUALLE 92                  
+FAGUGRAN 114                  
+FRAXAMER 92                  
+QUERRUBR 95                  
+TSUGCANA 95                  
+                   
+MapCode  231                  
+ACERRUBR 105                  
+ACERSACC 83                  
+FAGUGRAN 83                  
+FRAXAMER 80                  
+PINUSTRO 83                  
+PRUNSERO 83                  
+QUERRUBR 105                  
+                   
+MapCode  232                  
+ACERRUBR 67                  
+ACERSACC 72                  
+FAGUGRAN 99                  
+FRAXAMER 99                  
+PINUSTRO 72                  
+QUERRUBR 99                  
+TILIAMER 99                  
+                   
+MapCode  233                  
+ACERRUBR 96                  
+ACERSACC 71                  
+BETULENT 83                  
+CARYCORD 96                  
+FAGUGRAN 96                  
+FRAXAMER 71                  
+PINUSTRO 71                  
+                   
+MapCode  234                  
+ACERRUBR 102                  
+BETULENT 81                  
+BETUPAPY 81                  
+FRAXAMER 57                  
+PINUSTRO 81                  
+POPUTREM 81                  
+TSUGCANA 81                  
+                   
+MapCode  235                  
+ACERRUBR 56                  
+BETULENT 94                  
+PINUSTRO 48                  
+QUERALBA 56                  
+QUERCOCC 48                  
+QUERRUBR 48                  
+                   
+MapCode  236                  
+ACERRUBR 60                  
+BETULENT 91                  
+PINUSTRO 50                  
+QUERALBA 60                  
+QUERRUBR 60                  
+TSUGCANA 91                  
+                   
+MapCode  237                  
+ACERRUBR 83                  
+PINUSTRO 93                  
+PRUNSERO 56                  
+QUERCOCC 93                  
+QUERRUBR 93                  
+                   
+MapCode  238                  
+ACERRUBR 56                  
+BETUALLE 67                  
+BETULENT 71                  
+FAGUGRAN 56                  
+PINUSTRO 71                  
+PRUNSERO 71                  
+QUERRUBR 56                  
+                   
+MapCode  239                  
+ACERRUBR 59                  
+ACERSACC 59                  
+BETUALLE 78                  
+BETULENT 88                  
+FRAXAMER 88                  
+QUERALBA 59                  
+QUERRUBR 88                  
+TSUGCANA 88                  
+                   
+MapCode  240                  
+ACERSACC 48                  
+FRAXAMER 50                  
+QUERRUBR 59                  
+                   
+MapCode  241                  
+ACERRUBR 88                  
+PINUSTRO 74                  
+QUERALBA 66                  
+QUERRUBR 66                  
+                   
+MapCode  242                  
+ACERRUBR 66                  
+QUERALBA 55                  
+QUERCOCC 66                  
+QUERRUBR 103                  
+                   
+MapCode  243                  
+ACERSACC 51                  
+BETUALLE 51                  
+FAGUGRAN 51                  
+FRAXAMER 49                  
+QUERRUBR 42                  
+                   
+MapCode  244                  
+ACERRUBR 87                  
+BETUALLE 68                  
+BETULENT 57                  
+FAGUGRAN 68                  
+FRAXAMER 57                  
+PRUNSERO 57                  
+TSUGCANA 68                  
+                   
+MapCode  245                  
+ACERRUBR 93                  
+PINUSTRO 53                  
+TSUGCANA 60                  
+                   
+MapCode  246                  
+ACERRUBR 66                  
+BETULENT 57                  
+FAGUGRAN 66                  
+PINUSTRO 106                  
+QUERRUBR 106                  
+TSUGCANA 106                  
+                   
+MapCode  247                  
+ACERRUBR 96                  
+ACERSACC 71                  
+BETULENT 96                  
+FAGUGRAN 96                  
+PINUSTRO 90                  
+QUERRUBR 96                  
+TSUGCANA 71                  
                    
 MapCode  248                  
-ACERRUBR 72                  
-ACERSACC 72                  
-BETUALLE 56                  
-BETULENT 72                  
-BETUPAPY 72                  
-FAGUGRAN 67                  
-PINUSTRO 72                  
-QUERRUBR 72                  
+ACERRUBR 61                  
+ACERSACC 61                  
+BETUALLE 61                  
+BETULENT 61                  
+BETUPAPY 61                  
+FAGUGRAN 51                  
+PINUSTRO 61                  
+QUERRUBR 57                  
                    
 MapCode  301                  
 PINUSTRO 1                  

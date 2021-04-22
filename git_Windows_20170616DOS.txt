@@ -1,0 +1,396 @@
+Title:			git usage on Windows (command line)
+Project Descriptor:	LANDISII Upgrades Corrections Project 
+Project ID:		2016SoE021_LANDIS_Upgrades	
+Author:			bmarron
+Origin Date:		07 Nov 2016
+Revision Date:		16 June 2017
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Quik Start
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+#########
+Setup
+#########
+
+
+======= STEP 1: get the ProGit manual ==================
+
+	a. download .pdf of book
+https://git-scm.com/book/
+
+
+======= STEP 2: install Windows git with "git BASH" ===============
+https://git-for-windows.github.io/
+
+	a. install defaults
+	a1. after installation there will be a git BASH terminal icon on your Desktop
+	a2. all subsequent directions in this document assume the installation of
+	    "git BASH"
+	a3. all command-line commands below are typed into the BASH terminal
+	a4. all command-line commands below are prefixed with a "$"; expected output 
+	    from command-line commands is given in many cases
+
+
+
+---- (optional) STEP 2: install "GitHub for Windows" (in addition to "git BASH") ----
+https://desktop.github.com/
+https://help.github.com/desktop/guides/getting-started/installing-github-desktop/#platform-windows
+
+	a. install defaults
+
+
+===== STEP 3. Set your default git settings ==================================
+
+	a. '--global' stores in $HOME/.gitconfig (hidden) file
+	a1. set these globals (username to match GitHub username)
+
+$ git config --list						<<if on a new compu, this returns nothing
+
+$ git config --global user.name "username" &&			
+git config --global user.email <your GitHub registered email> &&
+git config --global core.editor "notepad" &&
+git config --global http.sslVerify false &&
+git config --global alias.last 'log -1 HEAD'
+
+$ git config --list						<<echos your recent inputs
+
+
+###################################################
+Know the basic git workflow for file changes 
+####################################################
+
+	a. There is an offsite (global) storage repository (in GitHub) 
+	    and an onsite (local) working repository (in your computer)
+
+	b. You work locally, make changes, then push the changes upstream to the 
+	   offsite repository. Git processes file changes in a sequence of actions.
+
+	b1. for a new file added to a git-monitored repository:
+		new ==> tracked and staged ==> commited ==> pushed
+
+	b2. for modifications to a file already in a git-monitored repository:
+		modified ==> staged ==> commited ==> pushed
+
+	c. Git and GitHub are not the same.
+
+
+###################################################
+Tracking changes for files in a GitHub repository
+###################################################
+
+	a. FORK the repo needing work
+		==> fr. https://github.com/LANDIS-II-Foundation/<name-of-your-repo-of-interest>
+		==> to https://github.com/<your-github-moniker>
+	b. make a new folder on the Desktop
+	c. clone a fresh LOCAL copy of the FORKED repo into the newly-created desktop folder 
+	d. make repo changes, as needed
+	e. check, add, commit, push
+	f. generate a GHB Pull request if you do not own the repo
+
+
+open Git Bash in the newly-created folder:
+
+$ git clone <GitHub address of forked repo>
+<work on files, make changes>
+
+$ git status
+$ git remote -v
+$ git add --all
+$ git status
+$ git commit
+$ git push origin master
+$ gitk
+
+
+
+#########################################################
+keep a FORKED repo current (in sync) with ORIGINAL_REPO
+#########################################################
+
+After a Pull request has been accepted from a forked repo, GitHub will report,
+"This branch is 1 commit behind <name of repo>:master"
+
+Requires sync.
+ 
+
+
+	a. create a Desktop folder, <name of repo>; clone a fresh LOCAL repo from the FORKED repo and specify 
+	   a LOCAL remote named, 'upstream' that links to the ORIGINAL_OWNER/ORIGINAL_REPO
+	a1. should have two LOCAL repo connectionss, 'origin' and 'upstream' with fetch and push capabilities
+	a2. LANDIS-II-Foundation/Extension-Base-Harvest used as example
+
+	b.  the basic sync sequence is,
+
+fetch changes from ORIGINAL_REPO to LOCAL repo 
+	==> merge changes from ORIGINAL repo to LOCAL repo
+		==> push changes to FORKED repo
+
+	c. The push to the forked repo is what keeps the forked repo in sync
+
+
+
+$ git clone https://github.com/bmarron18/Extension-Base-Harvest.git
+$ git remote add upstream https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest.git
+$ git remote -v
+
+
+$ git fetch upstream && 
+git merge upstream/master && 
+git push origin master
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Extended Process Examples
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+###################################################################
+Clone a (global) offsite repository to a (local) onsite repository
+###################################################################
+
+===== STEP 1: create a directory (folder) for a (local) onsite repo ==========
+
+	a. make a new folder to house the to-be-cloned repo
+
+
+====== STEP 2: clone a (global) offsite repo from GitHub =======================
+
+	a. Example: clone a repo from the LANDIS-II Foundation GitHub site
+	a1. go to the LANDIS-II Foundation GitHub site
+	a2. Get address of the repo of interest (eg Extension-Base-Harvest)
+
+<<https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest>>
+
+	b. in Windows FileExplorer, go to the newly-created directory (folder) 
+	   for the (local) onsite repo
+	b1. Right-Click on the folder; select 'Git Bash here'; open git BASH terminal
+	b2. clone the (global) repo
+
+$ git clone https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest
+
+	c. check contents of the newly-created (local) onsite repo
+	c1. NB. a git-tracked directory will have a .git folder and 
+	    git BASH will have the path will end in "(master)" (in green)
+
+$ ls
+$ cd Extension-Base-Harvest
+$ ls -A
+
+
+
+======= STEP 3: do some checks on the cloned (local) repo ===========
+
+	a. check last commit
+$ git last
+
+
+	c. check the onsite/offsite repository connections
+	c1. a 'repository' may be a (local) onsite repository OR 
+	    its (global) offsite image; the two are connected through git
+	c2. NB. The default name of the cloned offsite repo is "origin" 
+	c3. NB. The default name of the main branch in git is 'master'
+	c4. NB. "HEAD" is a pointer to the current (local) repo branch you're on.
+
+$ git remote -v
+$ git remote show origin
+
+
+	d. check branches
+	d1. NB. --all shows both local and remote branches
+
+$ git branch --all
+$ git checkout master
+
+
+#######################################################################
+the basic workflow:
+1) make changes to a tracked file (or create a new file) 
+2) then stage it, commit it, and push it
+
+Example: add a new file (lyrics.txt) to your cloned (local) repository
+########################################################################
+
+=== STEP 1. check status of git-tracked files and list currently tracked files ========
+
+	a. check status of git-tracked files
+$ git status
+
+	b. list the currently tracked files
+$ git ls-files
+
+
+
+==== STEP 2. make changes and check status =====================================
+
+	a. Paste a new file (lyrics.txt) into the folder of your cloned (local) onsite repo
+	b1. check new status of git-tracked files 
+	b2. NB new/modified/untracked/unstaged files are in red; 
+	    tracked/staged files are in green 
+$ git status
+
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	lyrics.txt		<== in red
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+==== STEP 3. stage new/modified files and check  ===============================
+
+	a. stage newly added files
+	a1. "git add <file>" OR "git add --all"
+$ git add --all
+$ git status
+
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   lyrics.txt		<== in green
+
+	b. see (tracked) changes made (could use your favorite GUI here)
+	b1. NB. this produces a long output; use "q" to quit
+$ git diff --staged
+
+
+==== STEP 4. commit the staged file ==========================================
+
+	a. commit changes
+	a1. NB. a text editor opens to add message; no message, no commit
+	a2. check status post-commit
+
+$ git commit
+
+[master fc934c0] This a test of an https protocol, command line "push" to a 
+LANDISII repository (Marron)
+ 1 file changed, 29 insertions(+)
+ create mode 100755 lyrics.txt
+
+$ git status
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+
+==== STEP 5. push changes back up to the (global) offsite GitHub repo  =====
+
+	a. push the changes made in the (local) onsite cloned repo 
+	   to the (global) offsite repo
+	a1. can only use the following command IF you have been given access to the 
+	    global repo; o/w you will need to use a Pull Request to upload changes
+	a2. on Windows, a GitHub box may open requesting your GitHub account 
+            info (name and password)
+
+
+$ git push origin master
+
+
+
+
+######################
+when things go wrong
+#######################
+
+
+	a. untrack all newly staged files
+$ git reset
+
+	b. uncommit a bad commit 
+$ git commit -m "Something terribly misguided"              (1)
+$ git reset HEAD~                                           (2)
+<< edit files as necessary >>                               (3)
+$ git add << edited files >>                                (4)
+$ git commit -c ORIG_HEAD                                   (5)
+
+	c. untracking folders/files deleted since last update
+$ git rm <folder> -r
+
+
+	d. git help
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+
+
+
+
+
+
+#########################################
+Another example of a git work cycle
+###########################################
+
+==== STEP 1. make changes and check status  ====================================
+
+	a. make changes to 'LANDIS_on_Linux1.txt' file
+	a1. check status
+
+$ git status
+						#unstaged: in red
+						#staged: in green
+On branch master
+Changes not staged for commit:					
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   LANDIS_1/LANDIS_on_Linux1.txt		#unstaged: in red
+
+
+
+==== STEP 2. stage and check  ===========================================
+
+	a. use 'git add <filename>'
+	a1. stage the modified file
+
+$ git add LANDIS_1/LANDIS_on_Linux1.txt
+$ git status
+On branch master
+Changes to be committed:					
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   LANDIS_1/LANDIS_on_Linux1.txt		#staged: in green
+
+
+==== STEP 3. commit the staged file ==========================================
+
+	a. use 'git commit -a -m "<message>"'
+	a1.  -a flag ==> all staged files committed
+	a2.  -m flag ==> adds the (required) message to the commit; o/w sends 
+	    you to a text editor
+
+$ git commit -a -m "12Aug2015"
+[master e8e02ce] 12Aug2015
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+==== STEP 4. push the committed file ===================================
+
+	a. use 'git push <offsite name> HEAD'
+	a1. (HEAD ==> A handy way to push the current working branch to the 
+	     same name in the offsite)
+	a2. use 'git push <offsite name> <onsite branch>'
+
+$ git push Repo_1 master
+Username for 'https://github.com': bmarron18
+Password for 'https://bmarron18@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 457 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/bmarron18/Repo_1.git
+   7831ea4..e8e02ce  master -> master
+
+

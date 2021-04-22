@@ -19,7 +19,8 @@ gc()
 studyarea <- 'MA-NH'
 #gcms <- c('TopoWxPrism',rep(c('CCSM4','CESM1-BGC','HadGEM2-ES','MPI-ESM-LR'),2))
 gcms <- c('TerraClimate',rep(c('CCSM4','CESM1-BGC','HadGEM2-ES','MPI-ESM-LR'),2))
-rcps <- c('historical',rep(c('rcp45','rcp85'),2),rep(c('rcp85','rcp45'),2)) # 'historical','rcp25','rcp45','rcp65','rcp85'
+rcps <- c('historical',rep(c('rcp26','rcp45','rcp85'),2),
+          rep(c('rcp85','rcp45','rcp26'),2)) # 'historical','rcp25','rcp45','rcp65','rcp85'
 #j=2
 gcm <- gcms[1]
 rcp0 <- rcps[1]
@@ -27,8 +28,10 @@ simyr0 <- 2015 # Specify for a given simulation what the start year should be
 
 ## Read in results of GoogleEarth script that calculates zonal stats of climate data by soils class.
 dropboxdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\"
-pestdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PestCalc\\"
-pnetdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PNET\\"
+#pestdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PestCalc\\"
+#pnetdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PNET\\"
+pestdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\data_shared\\Pest_and_PNET_outputs\\PEST_outputs"
+pnetdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Olivia_Mass\\data_shared\\Pest_and_PNET_outputs\\PNET\\"
 
 #jane path, upate for your path and variable names. You want a list of your ecoregion numbers here in the variable "ecoregions"
 eco <- read.table(paste("data\\","All_ecoregion.txt", sep=""), header=T)
@@ -47,11 +50,15 @@ nyearspest <- length(yearspest)
 ## Read some PestCalculator output and stitch tables back together
 for (i in 1:length(yearspest)) {
   if (gcm == 'TerraClimate') {
-    tempname <- paste(pestdir,studyarea,"\\",gcm,"_",rcp0,"\\","PestSppEcoregionTable_",studyarea,"_",gcm,"_",rcp0,"_",yearspest[i],"a.txt",sep="")
-    tempname2 <- paste(pestdir,studyarea,"\\",gcm,"_",rcp0,"\\","PestSppEcoregionTable_",studyarea,"_",gcm,"_",rcp0,"_",yearspest[i],"b.txt",sep="")
+    #tempname <- paste(pestdir,studyarea,"\\",gcm,"_",rcp0,"\\","PestSppEcoregionTable_",studyarea,"_",gcm,"_",rcp0,"_",yearspest[i],"a.txt",sep="")
+    #tempname2 <- paste(pestdir,studyarea,"\\",gcm,"_",rcp0,"\\","PestSppEcoregionTable_",studyarea,"_",gcm,"_",rcp0,"_",yearspest[i],"b.txt",sep="")
+    tempname <- paste(pestdir,"\\",gcm,"\\",rcp0,"\\","PestSppEcoregionTable",yearspest[i],"a.txt",sep="")
+    tempname2 <- paste(pestdir,"\\",gcm,"\\",rcp0,"\\","PestSppEcoregionTable",yearspest[i],"b.txt",sep="")
   } else {
-  tempname <- paste(pestdir,studyarea,"\\NEX_",gcm,"_",substr(rcp0,4,5),"\\PestSppEcoregionTable",yearspest[i],"a.txt",sep="")
-  tempname2 <- paste(pestdir,studyarea,"\\NEX_",gcm,"_",substr(rcp0,4,5),"\\PestSppEcoregionTable",yearspest[i],"b.txt",sep="")
+    #tempname <- paste(pestdir,studyarea,"\\NEX_",gcm,"_",substr(rcp0,4,5),"\\PestSppEcoregionTable",yearspest[i],"a.txt",sep="")
+    #tempname2 <- paste(pestdir,studyarea,"\\NEX_",gcm,"_",substr(rcp0,4,5),"\\PestSppEcoregionTable",yearspest[i],"b.txt",sep="")
+    tempname <- paste(pestdir,"\\",gcm,"\\",rcp0,"\\","PestSppEcoregionTable",yearspest[i],"a.txt",sep="")
+    tempname2 <- paste(pestdir,"\\",gcm,"\\",rcp0,"\\","PestSppEcoregionTable",yearspest[i],"b.txt",sep="")
   }
   pesttemp <- read.table(tempname,header=T)
   if (length(ecosb) > 0) {
@@ -143,7 +150,8 @@ simyears <- 2015:2215 # 1970:2016 # Originally 2006:2098, years run under PNET a
 dyntab <- data.frame(matrix(data=NA,nrow=length(ecoregionsxspp) * length(simyears)+4,ncol=6))
 names(dyntab) <- c("year","eco","spp","probest","maxanpp","maxbio")
 
-set.seed(4678) # <- Rep 4 #set.seed(426) # <- Rep 3 #set.seed(786) # <- Rep 2 #set.seed(46) # <- Rep 1
+set.seed(9869) # (4678) <- Rep 4 #set.seed(4678) # (348) <- Rep 3 #set.seed(348) # (3295) <- Rep 2 #set.seed (9869) # <- Rep 1
+repnum <- "Rep1" ## Should be one of "Rep1", "Rep2", "Rep3", "Rep4" and match the seed number in line above
 
 if (gcm=="TerraClimate") {randyears <- sample(1:length(simyears))}
 
@@ -243,7 +251,9 @@ names(minrelbiotab) <- c("shade",ecoregions)
 
 ## Read in dyntab for current climate (Prism, TopoWX, TerraClimate or other), calculated earlier, so you can replace year zero parameters with the same values in current runs.
 ## Spin-up conditions need to be the same.
+#dyntab2 <-read.table(paste(pnetdir,studyarea, "_biomass_succession_dynamic_inputs_TopoWX-TerraClimate_year0_table.txt",sep=""),header=T)
 dyntab2 <-read.table(paste(pnetdir,studyarea, "_biomass_succession_dynamic_inputs_TopoWX-TerraClimate_year0_table.txt",sep=""),header=T)
+
 if (is.factor(dyntab2[,3])) {
   dyntab2[,3] <- levels(dyntab2[,3])[dyntab2[,3]]
 }
@@ -259,9 +269,8 @@ dyntab[4,] <- c(">>____","_________","_______","_______","_______","____")
 dyntab[is.na(dyntab)] <- ""
 dyntab[1:2,4] <- ""
 
-repnum <- "Rep4"
 outfilename <- paste("data\\",studyarea,"_biomass_succession_dynamic_inputs_NEX_",gcm,"_",rcp0,"_",repnum,".txt",sep="")
-outfilename2 <- paste("data\\",studyarea,"_MinRelativeBiomassTable_",gcm,"_",rcp0,".txt",sep="")
+outfilename2 <- paste("data\\",studyarea,"_MinRelativeBiomassTable_",gcm,"_",rcp0,"_",repnum,".txt",sep="")
 write.table(dyntab,outfilename,
             row.names=F,quote=F,sep="\t",col.names=F)
 write.table(minrelbiotab, outfilename2,

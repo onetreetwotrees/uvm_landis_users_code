@@ -281,51 +281,51 @@ pestclim$year <- ztmaxsort$year
 
 #write.csv(zsradsort,paste(pnetdir,studyarea,"_",gcm,"_",rcp0,"_","mean_totalradiation_by_ecoregion.csv",sep=""))
 #write.table(pestclim,paste(pestdir,studyarea,"\\",'NEX_pestclim_',gcm,"_",rcp0,".txt",sep=""),row.names=F)
-# Below didn't include study area. Not sure which to use.
-#write.csv(zsradsort,paste(pnetdir,gcm,"_",rcp0,"_","mean_totalradiation_by_ecoregion.csv",sep=""))
-#write.table(pestclim,paste(pestdir,'NEX_pestclim_',gcm,"_",rcp0,".txt",sep=""),row.names=F)
 
 ## Update, change the way stdev of monthly Temps is calculated, so that it is stdev through time (10-yrs), rather than within ecoregion space.
 #pestclim <- read.table(paste(pestdir,'NEX_pestclim_',gcm,"_",rcp0,".txt",sep=""),header=T)
 
 ## Update, change the way stdev of monthly Temps is calculated, so that it is stdev through time (10-yrs), rather than within ecoregion space.
-topoclim <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\TopoWX\\mean_topowx_by_ecoregion_WMNF.csv",header=T)
+topoclim <- read.csv(paste("C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\TopoWX\\mean_topowx_by_ecoregion_",studyarea,".csv",sep=""),header=T)
+## For normals data, topoclim may not have a year. Assign to the last year of the normal, 1981-2010
+if (length(topoclim$year) == 0) {
+  topoclim$year <- 2010
+}
 
-#pestclim <- read.table(paste("C:\\Users\\janer\\Dropbox\\SpruceFir\\soils\\climate_means\\NEX_pestclim_",gcm,"_",rcp0,".txt",sep=""),header=T)
 # Identify any overlapping years, keep observed data from TopoWx or PRISM
+# Only do this if using annual data, not normals
+if (length(topoclim$year) > 0) {
 yrs_overlap <- unique(pestclim$year[(pestclim$year %in% topoclim$year)])
 pestclim <- pestclim[which(pestclim$year %in% yrs_overlap),]
+}
 
-pestclimtmp0 <- pestclim %>% dplyr::inner_join(topoclim,by=c("Ecoregion"="eco","year"="year","month"="mo"))
+pestclimNorm <- pestclim %>% dplyr::filter(year %in% c(1981:2010)) %>% 
+  group_by(Ecoregion, month)  %>%
+  dplyr::summarise(across(everything(), mean)) %>%
+  mutate(year = 2010)
+pestclimNormsd <- pestclim %>% dplyr::filter(year %in% c(1981:2010)) %>% 
+              mutate(meanT = (avgminT + avgmaxT)/2) %>%
+  group_by(Ecoregion, month)  %>%
+  dplyr::summarise(across(any_of(c("meanT","avgppt")), sd)) %>%
+  mutate(year = 2010)
+
+pestclimNorm <- pestclimNorm %>% inner_join(pestclimNormsd, 
+                c("Ecoregion"="Ecoregion","year"="year","month"="month"),
+                suffix = c("",".sd"))
+pestclimNorm <- pestclimNorm %>% mutate(stddevT = meanT, stdevppt = avgppt.sd) %>%
+                dplyr::select(Ecoregion:year)
+                            
+#pestclimtmp0 <- pestclim %>% dplyr::inner_join(topoclim,by=c("Ecoregion"="eco","year"="year","month"="mo"))
+pestclimtmp0 <- pestclimNorm %>% dplyr::inner_join(topoclim,by=c("Ecoregion"="eco","year"="year","month"="mo"))
 
 # Rearrange pestclimtmp to combine with pestclim. Basically want tmin, tmax, tmaxsd from Topowx. Precip from TerraClimate.
-pestclimtmp <- pestclimtmp0 %>% dplyr::select(Ecoregion,month,tmin,tmax,tmaxsd,avgppt,stdevppt,year)
+#pestclimtmp <- pestclimtmp0 %>% dplyr::select(Ecoregion,month,tmin,tmax,tmaxsd,avgppt,stdevppt,year)
+pestclimtmp <- pestclimtmp0 %>% dplyr::select(Ecoregion,month,tmin,tmax,stddevT,avgppt,stdevppt,year)
 names(pestclimtmp) <- names(pestclim)
 
 
 ecos <- sort(unique(pestclim$Ecoregion))
 yearspest <- sort(unique(pestclimtmp$year))
-
-for (j in 1:length(ecos)) {
-  datai <- pestclimtmp[pestclimtmp$Ecoregion == ecos[j],]
-  # Loop through months and calculate moving average of monthly sd
-  for (k in 1:12) {
-    moi <- datai[datai$month == k,]
-    for (i in yearspest[10]:yearspest[length(yearspest)]) {
-      indsi <- moi$year %in% (i-9):i
-      meanTi <- (moi$avgminT[indsi] + moi$avgmaxT[indsi])/2
-      sdTi <- sd(meanTi)
-      pptDecade <- moi$avgppt[indsi]
-      sdPpt <- sd(pptDecade,na.rm=T)
-      pestclimtmp$stddevT[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == i)] <- sdTi
-      pestclimtmp$stdevppt[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == i)] <- sdPpt
-    }
-    for (i in yearspest[1]:yearspest[9]) {
-      pestclimtmp$stddevT[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == i)] <- pestclimtmp$stddevT[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == yearspest[10])]
-      pestclimtmp$stdevppt[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == i)] <- pestclimtmp$stdevppt[which(pestclimtmp$Ecoregion == ecos[j] & pestclimtmp$month == k & pestclimtmp$year == yearspest[10])]
-    }
-  }
-}
 
 pestclimtmp$stddevT <- round(pestclimtmp$stddevT,digits=2)
 pestclimtmp$stdevppt <- round(pestclimtmp$stdevppt,digits=2)

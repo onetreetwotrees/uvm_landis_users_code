@@ -88,7 +88,9 @@ soil.Rast2[which(soil.Rast[] == 0)] <- 0
 dataType(soil.Rast2)
 ? datatype
 ## Now transform map projection to .prj most compatible with Google Earth Engine
-soil.Rast2.wgs84 <- projectRaster(soil.Rast2, crs = CRS("+init=epsg:4326"))
+## Make sure resampling method is nearest neighbor ('ngb') for categorical soil variables
+## Default, is bilinear resampling which is an average that is not appropriate for categorical vars.
+soil.Rast2.wgs84 <- projectRaster(soil.Rast2, crs = CRS("+init=epsg:4326"), method = 'ngb')
 
 ## Example of how to write a modified raster to new Geotiff file.
 ## Change variable name, directory path and new file name for your application.
@@ -98,5 +100,5 @@ writeRaster(soil.Rast2, 'C://Users//janer//Dropbox//Projects//Inspires//data_sha
             format = "GTiff", datatype = 'INT2U') ## Save to raster file, specify unsigned integer dataType
 ## Write out the copy of modified soils raster in WGS84 datum. Use this one for GEE climate summaries.
 writeRaster(soil.Rast2.wgs84, 'C://Users//janer//Dropbox//Projects//Inspires//data_shared//Soil class outputs AUG 2021-20210915T170256Z-001//Soil class outputs AUG 2021//Hanusia_soilmu_a_Merge_colors_25Aug2021_add100_wgs84.tif', 
-            format = "GTiff", datatype = 'INT2U') ## Save to raster file, specify unsigned integer dataType
+            format = "GTiff", datatype = 'INT2U')##, overwrite = T) ## Save to raster file, specify unsigned integer dataType
 

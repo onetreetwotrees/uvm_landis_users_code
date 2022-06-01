@@ -17,19 +17,27 @@ rcp0 <- "historical"          # 'historical','rcp25','rcp45','rcp65','rcp85'
 studyarea <- "VTMA" #"WMNF"
 ecos <- c()
 
+## Terraclimate downloaded in 2 sets of files, 1970-2020, 1950-1969. Loop through
+## Both sets to read and reformat climate tables, then stitch together and write out files for
+## PnET-Succession
+
+for (k in 1:2) {
 #setwd("G:\\SpruceFirProject\\GIS\\VT\\soils\\vt_soils_calc\\mosaic_soils_envi")
 ## Read in results of GoogleEarth script that calculates zonal stats of climate data by soils class.
-rootdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\uvm_landis_users_code\\data\\"
-#rootdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\GEE\\climate\\"
-pestdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PestCalc\\"
-pnetdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\models\\PNET\\"
-if (gcm == "TerraClimate") {
+  if (k == 1) {
+  rootdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\uvm_landis_users_code\\data\\"
   ztmin0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_tmmn.csv",sep=""),header=T)
   ztmax0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_tmmx.csv",sep=""),header=T)
   zppt0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_pr.csv",sep=""),header=T)
   zsrad0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_srad.csv",sep=""),header=T)
-
-}
+  } else {
+    rootdir <- "data\\climate_Hanusia\\"
+    ztmin0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_tmmn","_1950-1969",".csv",sep=""),header=T)
+    ztmax0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_tmmx","_1950-1969",".csv",sep=""),header=T)
+    zppt0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_pr","_1950-1969",".csv",sep=""),header=T)
+    zsrad0 <- read.csv(paste(rootdir,studyarea,"_mean_extract_",rcp0,"_",gcm,"_srad","_1950-1969",".csv",sep=""),header=T)
+  }
+  #rootdir <- "C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\GEE\\climate\\"
 
 # Extract date related variables from system.index
 years <- as.numeric(substr(ztmin0$system.index,1,4))
@@ -96,7 +104,6 @@ for (i in 1:nmonths) {
                                                             sradRowI, perl=TRUE))))
   ## Extract values from every other positions to get the mean values and convert to W/m^2
   sradTmp <- sradTmp[seq(from=2,to=length(sradTmp),by=2)] * 0.1
-  
   
   ## Now populate locations in parsed table
   ## ztMin
@@ -180,11 +187,11 @@ ztminyr <- aggregate(cbind(mean) ~ year +
                        ecoregion,mean,data=ztmin)
 
 
-classes <- unique(zppt$ecoregion)
-print(classes)
+ecoregions <- unique(zppt$ecoregion)
+print(ecoregions)
 ## Visualize climate summaries to make sure data look okay ################################################
 ## Plot mean climatologies by class
-## Create a color palette for soil classes
+## Create a color palette for soil ecoregions
 marker4 <- c("#9C179EFF","#B52F8CFF","#F89441FF","#FBD424FF","#5D01A6FF","#3B049AFF","#7E03A8FF",
              "#CC4678FF","#2BB07FFF","#433E85FF","#482173FF","#440154FF",
              "#DE5F65FF","#ED7953FF","#85D54AFF","#2D708EFF","#C2DF23FF","#25858EFF",
@@ -193,49 +200,49 @@ marker4 <- c("#9C179EFF","#B52F8CFF","#F89441FF","#FBD424FF","#5D01A6FF","#3B049
 ## plot total annual precip over time by class
 plot(c(min(zpptyr$year),max(zpptyr$year)),c(min(zpptyr$mean),max(zpptyr$mean)),xlab="year",ylab="Annual Precip. (mm)",type="n")
 mtext(gcm)
-for (i in 1:length(classes)) {
-  lines(zpptyr$year[zpptyr$ecoregion == classes[i]],
-        zpptyr$mean[zpptyr$ecoregion == classes[i]],
+for (i in 1:length(ecoregions)) {
+  lines(zpptyr$year[zpptyr$ecoregion == ecoregions[i]],
+        zpptyr$mean[zpptyr$ecoregion == ecoregions[i]],
         col=marker4[i],lwd=2)
-  text(2000,zpptyr$mean[zpptyr$ecoregion == classes[i]][94],
-       labels=paste(classes[i]),col=marker4[i])
+  text(2000,zpptyr$mean[zpptyr$ecoregion == ecoregions[i]][94],
+       labels=paste(ecoregions[i]),col=marker4[i])
   
 }
 
 ## plot tmax over time by class
 plot(c(min(ztmaxyr$year),max(ztmaxyr$year)),c(min(ztmaxyr$mean),max(ztmaxyr$mean)),xlab="year",ylab="Max Annual T (C)",type="n")
 mtext(gcm)
-for (i in 1:length(classes)) {
+for (i in 1:length(ecoregions)) {
   ecoi <- ecos[i]
   rgbi <- marker4[((i-1)*3 + 1):((i-1)*3 + 3)]
-  lines(ztmaxyr$year[ztmaxyr$ecoregion == classes[i]],
-        ztmaxyr$mean[ztmaxyr$ecoregion == classes[i]],
+  lines(ztmaxyr$year[ztmaxyr$ecoregion == ecoregions[i]],
+        ztmaxyr$mean[ztmaxyr$ecoregion == ecoregions[i]],
         col=marker4[i],lwd=2)
-  text(2000,ztmaxyr$mean[ztmaxyr$ecos == classes[i]][1],
-       labels=paste(classes[i]),col=marker4[i])
+  text(2000,ztmaxyr$mean[ztmaxyr$ecos == ecoregions[i]][1],
+       labels=paste(ecoregions[i]),col=marker4[i])
   
 }
 
 ## plot tmin over time by class
 plot(c(min(ztminyr$year),max(ztminyr$year)),c(min(ztminyr$mean),max(ztminyr$mean)),xlab="year",ylab="Max Annual T (C)",type="n")
 mtext(gcm)
-for (i in 1:length(classes)) {
+for (i in 1:length(ecoregions)) {
   ecoi <- ecos[i]
   rgbi <- marker4[((i-1)*3 + 1):((i-1)*3 + 3)]
-  lines(ztminyr$year[ztminyr$ecoregion == classes[i]],
-        ztminyr$mean[ztminyr$ecoregion == classes[i]],
+  lines(ztminyr$year[ztminyr$ecoregion == ecoregions[i]],
+        ztminyr$mean[ztminyr$ecoregion == ecoregions[i]],
         col=marker4[i],lwd=2)
-  text(2000,ztminyr$mean[ztminyr$ecos == classes[i]][1],
-       labels=paste(classes[i]),col=marker4[i])
+  text(2000,ztminyr$mean[ztminyr$ecos == ecoregions[i]][1],
+       labels=paste(ecoregions[i]),col=marker4[i])
   
 }
 
 ## END - Visualize climate summaries to make sure data look okay ################################################
 
-## Set up Pest calulator clim file
+## Set up Pest calculator clim file
 yearspest <- min(years):max(years)
 nyearspest <- length(yearspest)
-pestclim <- data.frame(matrix(nrow=12*length(classes)*nyearspest,ncol=8))
+pestclim <- data.frame(matrix(nrow=12*length(ecoregions)*nyearspest,ncol=8))
 names(pestclim) <- c("Ecoregion","month","avgminT","avgmaxT","stddevT","avgppt","stdevppt","year")
 
 # Read in PAR estimates from Hubbard Brook in units suitable for PnET
@@ -260,43 +267,27 @@ ztmeansort <- ztmean %>% dplyr::arrange(ecoregion,year,month)
 zpptsort <- zppt %>% dplyr::arrange(ecoregion,year,month)
 zsradsort <- zsrad %>% dplyr::arrange(ecoregion,year,month)
 
-## Update, change the way stdev of monthly Temps is calculated, so that it is stdev through time (10-yrs), rather than within ecoregion space.
+## Read-in pre-processed Topo-Wx temperature data.
 topoclim <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\TopoWX\\mean_topowx_by_ecoregion_VTMA.csv",header=T)
 
-#pestclim <- read.table(paste("C:\\Users\\janer\\Dropbox\\SpruceFir\\soils\\climate_means\\NEX_pestclim_",gcm,"_",rcp0,".txt",sep=""),header=T)
-# Identify any overlapping years, keep observed data from TopoWx or PRISM
-yrs_overlap <- unique(pestclim$year[(pestclim$year %in% topoclim$year)])
-pestclim <- pestclim[which(pestclim$year %in% yrs_overlap),]
+## Read in downloaded atmospheric CO-2 record from Mauna Loa 
+co2 <- read.csv("data\\climate_Hanusia\\co2_mm_mlo_cleaned.csv")
 
-pestclimtmp0 <- pestclim %>% dplyr::inner_join(topoclim,by=c("Ecoregion"="eco","year"="year","month"="mo"))
+# Identify any overlapping years, keep observed data from TopoWx or PRISM
+yrs_overlap <- unique(years[(years %in% topoclim$year)])
 
 # Rearrange pestclimtmp to combine with pestclim. Basically want tmin, tmax, tmaxsd from Topowx. Precip from TerraClimate.
-pestclimtmp <- pestclimtmp0 %>% dplyr::select(Ecoregion,month,tmin,tmax,tmaxsd,avgppt,stdevppt,year)
-names(pestclimtmp) <- names(pestclim)
-
-
-ecos <- sort(unique(pestclim$Ecoregion))
-yearspest <- sort(unique(pestclimtmp$year))
-
-species <- unique(pesttemp3$spp)
-lwds <- rep(1,length(classes))
-lwds[c(9,10,11,25)] <- 2
-ltys <- rep(1,length(classes))
-ltys[c(17,28,13,26,14,15,16)] <- 2
+ecos <- sort(unique(ztminsort$ecoregion))
 
 today <- Sys.Date()
 
 ### Now set up PNET input files...
 ## Set up pnet clim file
-yearspnet <- yearspest
+yearspnet <- years
 nyearspnet <- length(yearspnet)
-pnetclim <- data.frame(matrix(nrow=12*length(classes)*nyearspnet,ncol=7))
-names(pnetclim) <- c("Ecoregion","year","doy","Tmax","Tmin","par","pptcm")
 
-pnetclim$doy <- rep(c(15,46,76,107,137,168,198,229,259,290,321,351),nyearspnet)
 modoy <- data.frame(mo=1:12,doy=c(15,46,76,107,137,168,198,229,259,290,321,351))
 
-#maxrow <- length(which(!is.na(ztmax$MEAN)))
 maxrow <- as.numeric(max(row.names(ztmax[which(ztmax$year==max(yearspnet)),])))
 maxrow <- which(row.names(ztmax)==maxrow)
 
@@ -316,68 +307,57 @@ zsradsortsub <- zsradsort %>% dplyr::select(Ecoregion=ecoregion,year=year,mo=mon
 ## New 2021-10-24, try using library bigleaf to convert Global radiation to photosynthetic photon flux density (W/m2 to umol/m2/s)
 ## User guide says total conversion factor when combined is 2.3. Compare to rule of thumb of 2.1 that Scott shared above.
 
-zsradsortsub <- zsradsortsub %>% inner_join(modoy) %>% dplyr::select(Ecoregion,year,doy,par, ppfd)
+## Join CO2 record to solar radiation table
+zsradsortsub <- zsradsortsub %>% inner_join(co2, by=c("year"="year",
+                "mo"="month")) %>% 
+  dplyr::select(Ecoregion,year,mo,par, ppfd, averageco2ppm)
 
-pnetclim$Ecoregion <- ztmaxsort$ecoregion
-pnetclim$year <- ztmaxsort$year
-pnetclim$Tmax <- round(ztmaxsort$mean,digits=4)
-pnetclim$Tmin <- round(ztminsort$mean,digits=4)
-pnetclim$pptcm <- round(zpptsort$mean, digits=4)
-pnetclim$par <- round(zsradsortsub$ppfd,digits=4)
-#pnetclim <- pnetclim %>% inner_join(zsradsortsub)
+## Join all the tables together to compile the columns needed for PnET Succession
+pnetclim_all <- ztmaxsort %>% dplyr::select(ecoregion, year, month, mean) %>% 
+  rename(Tmax = mean) %>% inner_join(ztminsort %>% dplyr::select(ecoregion, year, month, mean)) %>% 
+  rename(Tmin = mean) %>% inner_join(zpptsort %>% dplyr::select(ecoregion, year, month, mean)) %>% 
+  rename(Prec = mean) %>% inner_join(zsradsortsub %>% rename(ecoregion = Ecoregion,
+  month = mo, PAR = ppfd, CO2 = averageco2ppm) %>% dplyr::select(ecoregion, year, month,
+                                                                 PAR, CO2)) %>% 
+  rename(Year = year, Month = month)
 
-#for (i in 1:length(classes)) {
-#  pnetclim$par[which(pnetclim$Ecoregion == classes[i])] <- round(parhb$PAR,digits=4)
-#}
-
-#setwd("C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\models\\PNET")
-setwd(pnetdir)
-
-# write.csv(pnetclim, "VTMA_TopoWx_Terraclimate_historical_pnetclim.csv", row.names=F)
-dirfiles <- dir()
-
-if (length(grep("site_by_ecoregion",dirfiles)) < 1) {
-tempsite <- read.table(paste(pnetdir, studyarea,"_template_site.txt", sep=""),header=T)
-## Read in soil means by ecoregion to parse and fill in site input file
-#soilmn <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Adirondacks\\gis\\adk_soilindex2remap_means_w_wiltingpoint.csv",header=T)
-soilmn <- read.csv("C:\\Users\\janer\\Dropbox\\Projects\\Inspires\\data_download\\GEE\\data_processed\\wmnf_topo_soils_class_means_24.csv", header=T)
-#soilmn$waterholdcap <- soilmn$fieldcap - soilmn$WC15Bar # Water holding capacity = field capacity - wilting point (wc15bar)
-soilmn$waterholdcap <- soilmn$fieldcap - soilmn$wiltpt # Water holding capacity = field capacity - wilting point (wc15bar)
-tempsite0 <- data.frame(matrix(nrow=0,ncol=dim(tempsite)[2]))
-names(tempsite0) <- names(tempsite)
-
-# Now loop through ecoregions and populated site template file with all ecoregion information
-for (i in 1:length(ecos)) {
-  tempi <- tempsite
-  ecoi <- ecos[i]
-  tempi$Ecoregion <- ecoi
-  tempi$Lat <- round(soilmn$latitude[which(soilmn$Index == ecoi)],digits=3)
-  tempi$Lon <- abs(round(soilmn$longitude[which(soilmn$Index == ecoi)],digits=3))
-  tempi$WaterHoldingCap <- abs(round(soilmn$waterholdcap[which(soilmn$Index == ecoi)],digits=3))
-  tempsite0 <- rbind(tempsite0,tempi)
+if (k == 1) {
+  ## Rename pnetclim_all, then read in earlier month data and combine into one big file
+  ## Before writing out climate files. Final result ~ 1950 - 2020
+  pnetclim_all_1970_plus <- pnetclim_all
+} else {
+    pnetclim_all_1958_1969 <- pnetclim_all
+    # Remove incomplete years of data 
+    pnetclim_all_1958_1969 <- pnetclim_all_1958_1969 %>% dplyr::filter(year > 1958)
+  }
 }
 
-write.table(tempsite0,paste(pnetdir, studyarea,"_template_site_by_ecoregion.txt", sep=""),row.names=F,col.names=F,quote=F)
-} else tempsite0 <- read.table(paste(pnetdir, studyarea,"_template_site_by_ecoregion.txt", sep=""),header=F)
+## Append pnetclim_all tables from different time periods to create one table with all years
+pnetclim_all <- pnetclim_all_1958_1969 %>% bind_rows(pnetclim_all_1970_plus)
 
-batchfile <- matrix(nrow=0,ncol=1)
+## Calculate a mean climate for years before 1959
+pnetclim_mean <- pnetclim_all %>% ungroup() %>% group_by(ecoregion, Month) %>% summarize_all(., funs(mean)) %>% 
+  mutate(Year = '1800-1958') %>% dplyr::select(ecoregion, Year, Month, Tmax:CO2)
 
-for (i in 1:length(yearspnet)) {
-  pnettemp <- pnetclim[which(pnetclim$year == yearspnet[i]),]
-  tempname <- paste(pnetdir,studyarea,"_",gcm,"_",rcp0,"_",
-                    yearspnet[i],".clim",sep="")
-  tempname2 <- paste(pnetdir,studyarea,"_",gcm,"_",rcp0,"_",
-                     yearspnet[i],".site",sep="")
-  rootname <- paste(studyarea,"_",gcm,"_",rcp0,"_",
-                    yearspnet[i],sep="")
-  write.table(pnettemp,tempname,sep="\t",col.names=F,row.names=F)
-  write.table(tempsite0,tempname2,sep="\t",col.names=F,row.names=F,quote=F)
-  batchcall <- paste("pnet2r","-f","-a1","-dvegdata/",rootname,sep=" ")
-  batchfile <- rbind(batchfile,batchcall)
-  rm(pnettemp,tempname,tempname2)
+pnetclim_all <- pnetclim_mean %>% bind_rows(pnetclim_all %>% 
+                mutate(Year = as.character(Year)))
+
+## Round climate variables for pnetclim file
+pnetclim_all$Tmax <- round(pnetclim_all$Tmax,digits=4)
+pnetclim_all$Tmin <- round(pnetclim_all$Tmin,digits=4)
+pnetclim_all$Prec <- round(pnetclim_all$Prec,digits=4)
+pnetclim_all$PAR <- round(pnetclim_all$PAR,digits=4)
+pnetclim_all$CO2 <- round(pnetclim_all$CO2,digits=4)
+
+## Loop through ecoregions, write out text file with climate data for PnET-Succession Landis-II extension
+
+for (i in 1:length(ecoregions)) {
+  # Subset climate table to ecoregion i
+  pnetclim_tmp <- pnetclim_all %>% ungroup() %>% dplyr::filter(ecoregion == ecoregions[i]) %>% 
+    dplyr::select(-ecoregion)
+  # Write ecoregion specific climate to file
+  file_name_i <- paste("data\\climate_Hanusia\\Pnet-succession_input_files\\",
+                       gcm,"_",rcp0,"_","eco","_",ecoregions[i],".txt", sep="")
+  write.table(pnetclim_tmp, file_name_i, row.names=F, quote=F)
+  rm(pnetclim_tmp, file_name_i)
 }
-
-# Write out the batch file for this scenario/model combination
-write.table(batchfile,paste("RunPnet_",studyarea,"_",gcm,"_",rcp0,"_many_years.bat",sep=""),row.names=F,col.names=F,quote=F)
-
-# Make some plots of results - required you to have run the batch file created in above line...

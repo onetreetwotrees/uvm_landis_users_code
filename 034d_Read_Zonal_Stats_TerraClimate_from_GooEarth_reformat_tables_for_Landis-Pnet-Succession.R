@@ -11,6 +11,7 @@ library(rgeos)
 library(stringr)
 library(Hmisc)
 library(viridis)
+library(bigleaf)
 
 gcm <- "TerraClimate"   # 'CCSM4', 'CESM1-BGC','HADGEM2-ES','MPI-ESM-LR','HadGEM2-ES'
 rcp0 <- "historical"          # 'historical','rcp25','rcp45','rcp65','rcp85'
@@ -334,6 +335,13 @@ if (k == 1) {
 
 ## Append pnetclim_all tables from different time periods to create one table with all years
 pnetclim_all <- pnetclim_all_1958_1969 %>% bind_rows(pnetclim_all_1970_plus)
+
+## If you want to substitute PAR values from Hubbard Brook data distributed with PnET-CN, uncomment below
+#pnetclim_all <- parhb2 %>% inner_join(modoy, by=c("DOY" = "doy")) %>% 
+#  mutate(Month = mo) %>% dplyr::select(Year, Month, PAR) %>% 
+#  inner_join(pnetclim_all %>% dplyr::select(-PAR)) %>% 
+#  dplyr::select(all_of(names(pnetclim_all))) %>% arrange(ecoregion, Year, Month)
+#rcp0 <- "historical_HBEF_PAR"
 
 ## Calculate a mean climate for years before 1959
 pnetclim_mean <- pnetclim_all %>% ungroup() %>% group_by(ecoregion, Month) %>% summarize_all(., funs(mean)) %>% 
